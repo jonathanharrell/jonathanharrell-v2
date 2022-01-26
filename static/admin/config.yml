@@ -9,6 +9,7 @@ collections:
     label: Blog
     folder: content/blog
     extension: mdx
+    format: frontmatter
     create: true
     fields:
       - { name: slug, label: Slug }
