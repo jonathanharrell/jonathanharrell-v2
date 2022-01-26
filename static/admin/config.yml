@@ -7,7 +7,8 @@ public_folder: /assets
 collections:
   - name: blog
     label: Blog
-    folder: blog
+    folder: content/blog
+    extension: mdx
     create: true
     fields:
       - { name: slug, label: Slug }
