@@ -5,9 +5,10 @@ backend:
 media_folder: static/assets
 public_folder: /assets
 collections:
-  - name: blog
-    label: Blog
-    folder: content/blog
+  - name: posts
+    label: Posts
+    label_singular: "Post"
+    folder: content/posts
     extension: mdx
     format: frontmatter
     create: true
