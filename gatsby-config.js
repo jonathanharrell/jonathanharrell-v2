@@ -31,13 +31,22 @@ module.exports = {
         "path": "./src/images/"
       },
       __key: "images"
-    }, {
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "pages",
         "path": "./src/pages/"
       },
       __key: "pages"
-    }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "blog",
+        "path": "./content/blog"
+      },
+      __key: "blog"
+    },
   ]
 };
