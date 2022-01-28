@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.prose > * {
+    @apply col-start-4;
+    @apply col-end-10;
+}
+
+.prose > pre {
+    @apply grid;
+    @apply md:grid-cols-8;
+    @apply col-start-3;
+    @apply col-end-11;
+    @apply md:pl-0;
+    @apply rounded-none;
+    @apply leading-7;
+}
+
+.prose > pre code {
+    @apply col-start-2;
+}
