@@ -45,7 +45,7 @@ body {
 }
 
 .article-body > figure img {
-    @apply col-span-10 2xl:col-span-8 w-full;
+    @apply col-span-10 2xl:col-span-8 w-full my-0;
 }
 
 .article-body > figure figcaption {
