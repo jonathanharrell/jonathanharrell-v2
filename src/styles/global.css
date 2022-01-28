@@ -7,21 +7,51 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.prose > * {
-    @apply col-start-4;
-    @apply col-end-10;
+.article-body {
+    @apply
+        md:grid
+        grid-cols-12
+        max-w-none
+        prose lg:prose-lg
+        xl:prose-xl
+        prose-headings:font-idealSans
+        prose-headings:tracking-tight
+        prose-p:my-3 lg:prose-p:my-4 xl:prose-p:my-4
+        prose-p:font-mercury
+        prose-p:tracking-[-.0125em]
+        prose-code:font-mono
+        prose-code:before:content-['']
+        prose-code:after:content-['']
+        prose-figcaption:font-idealSans;
 }
 
-.prose > pre {
-    @apply grid;
-    @apply md:grid-cols-8;
-    @apply col-start-3;
-    @apply col-end-11;
-    @apply md:pl-0;
-    @apply rounded-none;
-    @apply leading-7;
+.article-body > * {
+    @apply md:col-start-2 lg:col-start-3 2xl:col-start-4 md:col-end-12 lg:col-end-11 2xl:col-end-10;
 }
 
-.prose > pre code {
-    @apply col-start-2;
+.article-body > p > code {
+    @apply font-idealSans tracking-wide;
+
+    font-variant: small-caps;
+}
+
+.article-body > pre,
+.article-body > figure {
+    @apply lg:col-start-2 2xl:col-start-3 lg:col-end-12 2xl:col-end-11;
+}
+
+.article-body > figure {
+    @apply md:grid grid-cols-10 2xl:grid-cols-8;
+}
+
+.article-body > figure img {
+    @apply col-span-10 2xl:col-span-8 w-full;
+}
+
+.article-body > figure figcaption {
+    @apply col-start-1 col-end-11 lg:col-start-2 lg:col-end-10 2xl:col-end-8 text-inherit;
+}
+
+.article-body > pre {
+    @apply rounded-none leading-7;
 }

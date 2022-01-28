@@ -8,12 +8,14 @@ export default function BlogPost({
 }) {
   return (
     <Layout>
-      <article className="grid md:grid-cols-12 prose lg:prose-xl max-w-none prose-headings:font-idealSans prose-headings:tracking-tight prose-p:font-mercury prose-p:tracking-[-.0125em] prose-code:font-mono">
-        <h1>{mdx.frontmatter.title}</h1>
-        <MDXRenderer>
-          {mdx.body}
-        </MDXRenderer>
-      </article>
+      <div className="container mx-auto py-24 px-12">
+        <article className="article-body">
+          <h1>{mdx.frontmatter.title}</h1>
+          <MDXRenderer>
+            {mdx.body}
+          </MDXRenderer>
+        </article>
+      </div>
     </Layout>
   )
 }
