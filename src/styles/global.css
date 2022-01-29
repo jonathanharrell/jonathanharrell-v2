@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 body {
+    @apply font-mercury;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -13,16 +15,15 @@ body {
         grid-cols-12
         max-w-none
         prose lg:prose-lg
-        xl:prose-xl
         prose-headings:font-idealSans
         prose-headings:tracking-tight
         prose-p:my-3 lg:prose-p:my-4 xl:prose-p:my-4
-        prose-p:font-mercury
-        prose-p:tracking-[-.0125em]
+        prose-p:tracking-[-.02em]
         prose-code:font-mono
         prose-code:before:content-['']
         prose-code:after:content-['']
-        prose-figcaption:font-idealSans;
+        prose-figcaption:font-idealSans
+        prose-td:text-base;
 }
 
 .article-body > * {
@@ -30,9 +31,13 @@ body {
 }
 
 .article-body > p > code {
-    @apply font-idealSans tracking-wide;
+    /*@apply font-idealSans tracking-wide;*/
 
-    font-variant: small-caps;
+    /*font-variant-caps: small-caps;*/
+}
+
+.article-body > p:first-of-type:first-letter {
+    @apply float-left mt-[8px] pr-2 font-idealSans font-semibold text-6xl leading-[0.8] text-red-500;
 }
 
 .article-body > pre,
@@ -49,9 +54,9 @@ body {
 }
 
 .article-body > figure figcaption {
-    @apply col-start-1 col-end-11 lg:col-start-2 lg:col-end-10 2xl:col-end-8 text-inherit;
+    @apply col-start-1 col-end-11 lg:col-start-2 lg:col-end-10 2xl:col-end-8 text-black;
 }
 
 .article-body > pre {
-    @apply rounded-none leading-7;
+    @apply -mx-8 sm:mx-0 py-6 px-8 rounded-none leading-6;
 }

@@ -4,7 +4,7 @@ date: 2017-08-10T20:17:00.000Z
 title: Contextual Callouts with CSS Grid
 description: >-
   Using the power of CSS grid, it is now easier than ever before to create
-  callouts — small paragraphs that sit next to the primary text and offer
+  callouts—small paragraphs that sit next to the primary text and offer
   additional information.
 tags:
   - css
@@ -24,27 +24,17 @@ I have been searching for a while now for a way to bring these to the web with p
 Say I’m building a blog post template. I’ll need a header to contain the title and date, and a section for share links. Then I’ll need the primary blog content, consisting of headings, paragraphs, images, and, yes, callouts. First let’s write some semantic markup:
 
 ```html
-<article class="blog-post">
-  <header class="blog-post-header">
-    <h1 class="blog-post-title">...</h1>
-    <time datetime="..." class="blog-post-date">...</time>
+<article>
+  <header>
+    <h1>Article Heading</h1>
   </header>
-  <aside class="blog-post-share">...</aside>
   <p>...</p>
-  <h2>...</h2>
-  <p>...</p>
-  <aside>
-    <p>...</p>
-  </aside>
-  <p>...</p>
+  <h2>Section Heading</h2>
   <p>...</p>
   <aside>
     <p>...</p>
   </aside>
-  <figure>
-    <img src="..." alt="...">
-    <figcaption>...</figcaption>
-  </figure>
+  <p>...</p>
 </article>
 ```
 
@@ -143,3 +133,16 @@ I set the figure up to span across all 12 columns of its parent grid. I set up a
 ## Conclusion
 
 That wraps up this one. I’d love to see what other people do with callouts!
+
+---
+
+> This is a quote
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+Here's a sentence with a footnote. [^1]
+
+[^1]: This is the footnote.
