@@ -13,10 +13,6 @@ tags:
 ---
 At long last, contextual callouts are possible with CSS grid. Contextual callouts are small paragraphs that sit beside primary text and offer secondary information to a reader. They have long been a feature of books, magazines and other printed materials. I particularly enjoy coming across these small asides when reading, as they add texture and interest to the content.
 
-<aside>
-  <p>This is an aside note with two lines in it</p>
-</aside>
-
 I have been searching for a while now for a way to bring these to the web with pure CSS. The solutions in the past have typically been fairly messy, requiring annoying floats and clearing, or manual absolute positioning. That is changing now, thanks to CSS grid.
 
 <figure>
@@ -138,20 +134,3 @@ Here’s my styling for figures within a post, causing them to stretch the full 
 ```
 
 I set the figure up to span across all 12 columns of its parent grid. I set up a nested grid within the figure with the same number of columns and spacing as the parent. This allows me to have the `img` element to span the full width, while the `figcaption` is aligned with the rest of the primary text in the blog post.
-
-## Conclusion
-
-That wraps up this one. I’d love to see what other people do with callouts!
-
----
-
-> This is a quote
-
-| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
-
-Here's a sentence with a footnote. [^1]
-
-[^1]: This is the footnote.

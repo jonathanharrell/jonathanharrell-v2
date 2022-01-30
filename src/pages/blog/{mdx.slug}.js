@@ -4,8 +4,8 @@ import {MDXRenderer} from "gatsby-plugin-mdx"
 import Layout from "../../components/layout";
 
 export default function BlogPost({
- data: {mdx}
-}) {
+                                   data: {mdx}
+                                 }) {
   const {frontmatter, body} = mdx;
   const {date, title, description} = frontmatter;
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
@@ -16,27 +16,25 @@ export default function BlogPost({
 
   return (
     <Layout>
-      <div className="container mx-auto py-24 px-8 sm:px-16 md:px-0">
-        <article>
-          <header>
-            <p className="mb-4 md:mb-6 font-idealSans text-sm md:text-base text-center text-red-500">
-              {formattedDate}
-            </p>
-            <h1 className="max-w-sm md:max-w-md lg:max-w-lg mx-auto px-['12.5%'] font-idealSans text-3xl md:text-4xl xl:text-5xl xl:leading-[1.125] font-semibold tracking-tight text-center text-gray-900">
-              {title}
-            </h1>
-            <p className="max-w-sm mx-auto mt-4 md:mt-6 font-idealSans text-sm md:text-base leading-6 md:leading-7 italic text-center">
-              {description}
-            </p>
-          </header>
-          <hr className="md:max-w-xs xl:max-w-sm mx-auto my-8 sm:my-12 md:mt-16"/>
-          <div className="article-body">
-            <MDXRenderer>
+      <article>
+        <header className="text-center">
+          <p className="mb-6 sm:mb-8 font-idealSans text-sm sm:text-base text-red-500">
+            {formattedDate}
+          </p>
+          <h1 className="max-w-[22ch] mx-auto font-idealSans text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight">
+            {title}
+          </h1>
+          <p className="max-w-[60ch] mx-auto mt-6 sm:mt-8 font-idealSans italic text-sm sm:text-base !leading-loose">
+            {description}
+          </p>
+        </header>
+        <hr className="max-w-[160px] mx-auto my-10 sm:my-12 lg:my-16"/>
+        <div className="article-body">
+          <MDXRenderer>
               {body}
-            </MDXRenderer>
-          </div>
-        </article>
-      </div>
+          </MDXRenderer>
+        </div>
+      </article>
     </Layout>
   )
 }

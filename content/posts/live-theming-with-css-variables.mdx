@@ -18,7 +18,7 @@ The process is fairly simple—setup initial variable values in CSS, markup some
   <figcaption>Test</figcaption>
 </figure>
 
-## Setup Initial Values of CSS Variables
+## Set Up Initial Values
 
 First we’ll set up the variables and their initial values in the `:root` pseudo-selector:
 
@@ -93,7 +93,7 @@ document.querySelector('#base-font-size')
 
 That’s all it takes to set up basic interactive theming with CSS variables. We can go a step further and keep these values in localStorage so the theme settings will persist on refresh.
 
-## Store Values of CSS Variables in localStorage
+## Store Values in `localStorage`
 
 I’ll edit my `handleInputChange` function to store values in localStorage:
 
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 Now, refresh your page to see a persistent theme!
 
-## Bonus: Pre-Defined Themes Using CSS Variables
+## Bonus: Pre-Defined Themes
 
 If you want to offer some pre-defined themes, in addition to the free-form inputs, simply create a method that sets all the variables to pre-defined values and hook it up to an event listener.
 
@@ -148,8 +148,6 @@ setTheme({
 });
 ```
 
-## Conclusion
-
-CSS variables make live theming a piece of cake. Check out the live experiment here. In a real-world app, you would probably want to store the theme options in user settings on the back-end. Hopefully this gets you started playing around with the fun things that CSS variables make possible.
+CSS variables make live theming a piece of cake. Check out the [live experiment here](https://codepen.io/jonathanharrell/details/EdawEq). In a real-world app, you would probably want to store the theme options in user settings on the back-end. Hopefully this gets you started playing around with the fun things that CSS variables make possible.
 
 You can learn more about CSS variables in [my article here](/blog/unlocking-the-benefits-of-css-custom-properties/).
