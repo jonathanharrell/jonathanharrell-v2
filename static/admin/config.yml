@@ -13,6 +13,7 @@ collections:
     format: frontmatter
     create: true
     fields:
+      - { name: templateKey, label: 'Template Key', widget: hidden, default: post }
       - { name: slug, label: Slug }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }

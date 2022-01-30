@@ -25,7 +25,14 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         rehypePlugins: [
-          require("rehype-highlight")
+          require("rehype-highlight"),
+          require("rehype-slug"),
+          [
+            require("rehype-autolink-headings"),
+            {
+              test: ['h2']
+            }
+          ]
         ]
       }
     },
