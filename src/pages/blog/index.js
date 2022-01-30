@@ -21,7 +21,7 @@ const Blog = ({data: {allMdx}}) => {
               <h2 className="text-lg xl:text-2xl font-idealSans font-medium tracking-tight hover:underline">
                 {post.node.frontmatter.title}
               </h2>
-              <p className="mt-2 leading-loose">
+              <p className="mt-2 leading-relaxed">
                 {post.node.frontmatter.description}
               </p>
               <p className="mt-3 font-idealSans text-sm hover:underline text-gray-500">
