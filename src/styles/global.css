@@ -14,6 +14,7 @@ body {
         prose lg:prose-lg
         max-w-none sm:max-w-[65ch] xl:max-w-[75ch]
         mx-auto
+        prose-headings:relative
         prose-headings:font-idealSans
         prose-headings:tracking-tight
         prose-headings:text-gray-700
@@ -26,10 +27,20 @@ body {
         prose-img:my-0
         prose-pre:my-8 sm:prose-pre:my-6
         prose-pre:-mx-8 sm:prose-pre:mx-0
+        prose-pre:py-6 sm:prose-pre:px-6 lg:prose-pre:p-8
         prose-pre:rounded-none sm:prose-pre:rounded
+        prose-pre:text-gray-200
     ;
 }
 
 .article-body > p:first-of-type:first-letter {
     @apply float-left mt-[8px] md:mt-3 pr-2 font-idealSans font-semibold text-6xl leading-[0.8] text-gray-700;
+}
+
+.article-body > figure img {
+    @apply w-full;
+}
+
+pre > code.hljs {
+    @apply p-0 bg-transparent text-inherit;
 }

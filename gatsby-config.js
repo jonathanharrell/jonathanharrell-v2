@@ -1,3 +1,5 @@
+const React = require('react');
+
 module.exports = {
   siteMetadata: {
     title: `Jonathan Harrell`,
@@ -27,12 +29,6 @@ module.exports = {
         rehypePlugins: [
           require("rehype-highlight"),
           require("rehype-slug"),
-          [
-            require("rehype-autolink-headings"),
-            {
-              test: ['h2']
-            }
-          ]
         ]
       }
     },
@@ -41,26 +37,26 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        "name": "images",
         "path": "./src/images/"
-      },
-      __key: "images"
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        "name": "pages",
         "path": "./src/pages/"
-      },
-      __key: "pages"
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        "name": "posts",
         "path": "./content/posts"
-      },
-      __key: "posts"
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "path": "./static/assets/"
+      }
     },
   ]
 };

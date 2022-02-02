@@ -15,9 +15,9 @@ At long last, contextual callouts are possible with CSS grid. Contextual callout
 
 I have been searching for a while now for a way to bring these to the web with pure CSS. The solutions in the past have typically been fairly messy, requiring annoying floats and clearing, or manual absolute positioning. That is changing now, thanks to CSS grid.
 
-<figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
-  <figcaption>Test</figcaption>
+<figure className="lg:-ml-24 lg:-mr-24">
+  <img src="../../assets/css-grid-layout.svg" alt=""/>
+  <figcaption className="lg:ml-24 lg:mr-24">Test</figcaption>
 </figure>
 
 ## The Grid Markup
@@ -103,7 +103,7 @@ Now, the post header, post paragraphs and headings, and share links all sit next
 The asides are now pulled to the left of the paragraph immediately preceding them, looking exactly like callouts. If you wanted more control over the positioning of these callouts (say you wanted one at the _bottom_ of the row, rather than at the top), you could apply some targeted styling with the `align-self` property, but for this exercise, I’m assuming a more generic approach for content generated from a CMS.
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="https://via.placeholder.com/800x500" alt="test"/>
   <figcaption>Test</figcaption>
 </figure>
 

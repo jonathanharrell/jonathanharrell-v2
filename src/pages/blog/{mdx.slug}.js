@@ -21,7 +21,7 @@ export default function BlogPost({
           <p className="mb-6 sm:mb-8 font-idealSans text-sm sm:text-base text-red-500">
             {formattedDate}
           </p>
-          <h1 className="max-w-[22ch] mx-auto font-idealSans text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight">
+          <h1 className="max-w-[22ch] mx-auto font-idealSans text-3xl sm:text-4xl lg:text-5xl xl:leading-[1.125] font-medium tracking-tight">
             {title}
           </h1>
           <p className="max-w-[60ch] mx-auto mt-6 sm:mt-8 font-idealSans italic text-sm sm:text-base !leading-loose">

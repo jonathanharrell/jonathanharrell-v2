@@ -5,3 +5,5 @@ public
 .idea
 .graphqlconfig
 schema.graphql
+
+.DS_Store
