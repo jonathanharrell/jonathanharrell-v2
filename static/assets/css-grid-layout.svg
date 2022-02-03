@@ -1,1 +1,100 @@
-<svg height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h800v500h-800z" fill="#f1f1f1"/><path d="m314 233h173v81h-173z" fill="#d8d8d8"/><path d="m543.333333 141h36v35h-36z" fill="#d8d8d8"/><g stroke="#e96d00" transform="translate(130 95)"><path d="m.5.5h539v310h-539z"/><path d="m270-269.5v540" transform="matrix(0 -1 1 0 269.5 305.5)"/><path d="m270-259.5v540" transform="matrix(0 -1 1 0 259.5 315.5)"/><path d="m270-269.5v540" transform="matrix(0 -1 1 0 269.5 351.5)"/><path d="m270-259.5v540" transform="matrix(0 -1 1 0 259.5 361.5)"/><path d="m270-269.5v540" transform="matrix(0 -1 1 0 269.5 397.5)"/><path d="m270-259.5v540" transform="matrix(0 -1 1 0 259.5 407.5)"/><path d="m270-269.5v540" transform="matrix(0 -1 1 0 269.5 443.5)"/><path d="m270-259.5v540" transform="matrix(0 -1 1 0 259.5 453.5)"/><path d="m270-269.5v540" transform="matrix(0 -1 1 0 269.5 489.5)"/><path d="m270-259.5v540" transform="matrix(0 -1 1 0 259.5 499.5)"/><path d="m270-269.5v540" transform="matrix(0 -1 1 0 269.5 535.5)"/><path d="m270-259.5v540" transform="matrix(0 -1 1 0 259.5 545.5)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 191 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 201 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 237 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 247 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 283 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 293 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 329 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 339 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 375 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 385 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 421 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 431 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 467 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 477 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 513 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 523 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 559 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 569 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 605 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 615 166)"/><path d="m155.5-155v311" transform="matrix(-1 0 0 -1 651 156)"/><path d="m155.5-145v311" transform="matrix(-1 0 0 -1 661 166)"/></g><path d="m101 66h598v369h-598z" stroke="#000" stroke-width="2"/><path d="m314 141h173v3h-173z" fill="#000"/><path d="m222 141h81v3h-81z" fill="#000"/><path d="m222 151h81v3h-81z" fill="#000"/><path d="m241 161h62v3h-62z" fill="#000"/><path d="m222 325h81v3h-81z" fill="#e96d00"/><path d="m222 335h81v3h-81z" fill="#e96d00"/><path d="m241 345h62v3h-62z" fill="#e96d00"/><g fill="#000"><path d="m314 151h173v3h-173z"/><path d="m314 161h173v3h-173z"/><path d="m314 171h173v3h-173z"/><path d="m314 181h173v3h-173z"/><path d="m314 191h173v3h-173z"/><path d="m314 201h173v3h-173z"/><path d="m314 211h173v3h-173z"/><path d="m314 221h115v3h-115z"/><g><path d="m314 325h173v3h-173z"/><path d="m314 335h173v3h-173z"/><path d="m314 345h173v3h-173z"/><path d="m314 355h173v3h-173z"/><path d="m314 365h173v3h-173z"/><path d="m314 375h115v3h-115z"/></g></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="507px" viewBox="0 0 800 507" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>css-grid-layout</title>
+    <g id="css-grid-layout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F3F4F6" x="0" y="0" width="800" height="507"></rect>
+        <rect id="Rectangle" fill="#D8D8D8" x="314" y="223" width="173" height="81"></rect>
+        <rect id="Rectangle" stroke="#E96D00" x="130.5" y="95.5" width="539" height="316"></rect>
+        <line x1="400" y1="-139.5" x2="400" y2="400.5" id="Line" stroke="#E96D00" transform="translate(400.000000, 130.500000) rotate(-90.000000) translate(-400.000000, -130.500000) "></line>
+        <line x1="400" y1="-46.5" x2="400" y2="493.5" id="Line" stroke="#E96D00" transform="translate(400.000000, 223.500000) rotate(-90.000000) translate(-400.000000, -223.500000) "></line>
+        <line x1="400" y1="43.5" x2="400" y2="583.5" id="Line-Copy" stroke="#E96D00" transform="translate(400.000000, 313.500000) rotate(-90.000000) translate(-400.000000, -313.500000) "></line>
+        <line x1="400" y1="106.5" x2="400" y2="646.5" id="Line-Copy" stroke="#E96D00" transform="translate(400.000000, 376.500000) rotate(-90.000000) translate(-400.000000, -376.500000) "></line>
+        <g id="Group-Copy-7" transform="translate(170.500000, 253.500000) rotate(-90.000000) translate(-170.500000, -253.500000) translate(12.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-8" transform="translate(216.500000, 253.500000) rotate(-90.000000) translate(-216.500000, -253.500000) translate(58.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-9" transform="translate(262.500000, 253.500000) rotate(-90.000000) translate(-262.500000, -253.500000) translate(104.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-10" transform="translate(308.500000, 253.500000) rotate(-90.000000) translate(-308.500000, -253.500000) translate(150.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-11" transform="translate(354.500000, 253.500000) rotate(-90.000000) translate(-354.500000, -253.500000) translate(196.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-12" transform="translate(400.500000, 253.500000) rotate(-90.000000) translate(-400.500000, -253.500000) translate(242.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-13" transform="translate(446.500000, 253.500000) rotate(-90.000000) translate(-446.500000, -253.500000) translate(288.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-14" transform="translate(492.500000, 253.500000) rotate(-90.000000) translate(-492.500000, -253.500000) translate(334.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-15" transform="translate(538.500000, 253.500000) rotate(-90.000000) translate(-538.500000, -253.500000) translate(380.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-16" transform="translate(584.500000, 253.500000) rotate(-90.000000) translate(-584.500000, -253.500000) translate(426.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <g id="Group-Copy-17" transform="translate(630.500000, 253.500000) rotate(-90.000000) translate(-630.500000, -253.500000) translate(472.000000, 248.000000)" stroke="#E96D00">
+            <line x1="158.5" y1="-158" x2="158.5" y2="159" id="Line" transform="translate(158.500000, 0.500000) rotate(-90.000000) translate(-158.500000, -0.500000) "></line>
+            <line x1="158.5" y1="-148" x2="158.5" y2="169" id="Line-Copy" transform="translate(158.500000, 10.500000) rotate(-90.000000) translate(-158.500000, -10.500000) "></line>
+        </g>
+        <rect id="Rectangle" stroke="#000000" stroke-width="2" x="101" y="66" width="598" height="375"></rect>
+        <g id="Group-3" transform="translate(314.000000, 131.000000)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="10" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="20" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="30" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="40" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="50" width="173" height="3"></rect>
+            <rect id="Rectangle-Copy" x="0" y="60" width="173" height="3"></rect>
+            <rect id="Rectangle-Copy-2" x="0" y="70" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="80" width="115" height="3"></rect>
+        </g>
+        <g id="Group-4" transform="translate(222.000000, 131.000000)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="81" height="3"></rect>
+            <rect id="Rectangle" x="0" y="10" width="81" height="3"></rect>
+            <rect id="Rectangle" x="19" y="20" width="62" height="3"></rect>
+        </g>
+        <g id="Group-2" transform="translate(222.000000, 314.000000)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="81" height="3"></rect>
+            <rect id="Rectangle" x="0" y="10" width="81" height="3"></rect>
+            <rect id="Rectangle" x="19" y="20" width="62" height="3"></rect>
+        </g>
+        <g id="Group-Copy-6" transform="translate(314.000000, 314.000000)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="10" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="20" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="30" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="40" width="173" height="3"></rect>
+            <rect id="Rectangle" x="0" y="50" width="115" height="3"></rect>
+        </g>
+        <g id="Group-5" transform="translate(166.000000, 95.000000)" fill="#E96D00" opacity="0.25">
+            <rect id="Rectangle" style="mix-blend-mode: multiply;" x="0" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-3" style="mix-blend-mode: multiply;" x="46" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-4" style="mix-blend-mode: multiply;" x="92" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-5" style="mix-blend-mode: multiply;" x="138" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-6" style="mix-blend-mode: multiply;" x="184" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-7" style="mix-blend-mode: multiply;" x="230" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-8" style="mix-blend-mode: multiply;" x="276" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-9" style="mix-blend-mode: multiply;" x="322" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-10" style="mix-blend-mode: multiply;" x="368" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-11" style="mix-blend-mode: multiply;" x="414" y="0" width="9" height="317"></rect>
+            <rect id="Rectangle-Copy-12" style="mix-blend-mode: multiply;" x="460" y="0" width="9" height="317"></rect>
+        </g>
+    </g>
+</svg>

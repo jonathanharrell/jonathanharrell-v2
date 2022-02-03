@@ -27,10 +27,20 @@ body {
         prose-img:my-0
         prose-pre:my-8 sm:prose-pre:my-6
         prose-pre:-mx-8 sm:prose-pre:mx-0
-        prose-pre:py-6 sm:prose-pre:px-6 lg:prose-pre:p-8
-        prose-pre:rounded-none sm:prose-pre:rounded
-        prose-pre:text-gray-200
+        lg:prose-pre:p-8
+        prose-pre:py-6
+        prose-pre:px-8 sm:prose-pre:px-6
+        prose-pre:bg-gray-100
+        prose-pre:rounded-none sm:prose-pre:rounded-lg lg:prose-pre:rounded-xl
+        prose-pre:!leading-relaxed
+        prose-pre:font-medium
+        prose-pre:text-gray-500
+        prose-code:font-medium
+        prose-code:before:content-['']
+        prose-code:after:content-['']
     ;
+
+    font-feature-settings: "liga" 1;
 }
 
 .article-body > p:first-of-type:first-letter {
