@@ -71,7 +71,7 @@ Now, progressively enhance for browsers that do support CSS grid using an `@supp
 ```
 
 <figure>
-  <img src="../../assets/css-grid-layout-1.svg" alt=""/>
+  <img src="../../assets/css-grid-layout-1.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -79,8 +79,8 @@ Here I’m setting up the `.blog-post` article as a 12-column grid, each with a 
 
 ```css
 .blog-post header {
-  grid-column-start: 2;
-  grid-column-end: span 3;
+  grid-column-start: 3;
+  grid-column-end: span 2;
 }
 
 .blog-post h2,
@@ -92,7 +92,7 @@ Here I’m setting up the `.blog-post` article as a 12-column grid, each with a 
 ```
 
 <figure>
-  <img src="../../assets/css-grid-layout-2.svg" alt=""/>
+  <img src="../../assets/css-grid-layout-2.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -105,9 +105,10 @@ Now, the post header and content sit next to each other in a row. The callouts a
 }
 ```
 
-<aside>
-  <p>This is an aside note with two lines in it</p>
-</aside>
+<figure>
+  <img src="../../assets/css-grid-layout-4.png" alt=""/>
+  <figcaption>Test</figcaption>
+</figure>
 
 The asides are now pulled to the left of the paragraph immediately preceding them, looking exactly like callouts. If you wanted more control over the positioning of these callouts (say you wanted one at the _bottom_ of the row, rather than at the top), you could apply some targeted styling with the `align-self` property, but for this exercise, I’m assuming a more generic approach for content generated from a CMS.
 
@@ -131,8 +132,13 @@ Here’s my styling for figures within a post, causing them to stretch the full 
 
 .blog-post figure figcaption {
   grid-column-start: 5;
-  grid-column-end: span 6;
+  grid-column-end: span 4;
 }
 ```
+
+<figure>
+  <img src="../../assets/css-grid-layout-5.png" alt=""/>
+  <figcaption>Test</figcaption>
+</figure>
 
 I set the figure up to span across all 12 columns of its parent grid. I set up a nested grid within the figure with the same number of columns and spacing as the parent. This allows me to have the `img` element to span the full width, while the `figcaption` is aligned with the rest of the primary text in the blog post.

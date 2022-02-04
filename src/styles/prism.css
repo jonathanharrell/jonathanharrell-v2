@@ -7,7 +7,7 @@
 .token.doctype,
 .token.punctuation,
 .token.entity {
-    color: hsl(230, 8%, 24%);
+    @apply text-gray-500;
 }
 
 .token.attr-name,
