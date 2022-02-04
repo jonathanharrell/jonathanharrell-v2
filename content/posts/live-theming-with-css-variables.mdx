@@ -15,7 +15,9 @@ The process is fairly simple—setup initial variable values in CSS, markup some
 
 <figure className="lg:-ml-24 lg:-mr-24">
   <img src="../../assets/live-theming.svg" alt=""/>
-  <figcaption className="lg:ml-24 lg:mr-24">Test</figcaption>
+  <figcaption className="lg:ml-24 lg:mr-24">
+    An editor for customizing the colors and typography of a layout, built with simple JavaScript and CSS variables.
+  </figcaption>
 </figure>
 
 ## Set Up Initial Values
@@ -51,19 +53,8 @@ You may also want to add some transitions for the specific properties that will 
 Now it’s time to create the form the user will be interacting with to customize their theme. I’m using color inputs for the color options and range inputs for the font size and line height.
 
 ```html
-<input
-  type="color"
-  id="background-color"
-  value="#2eec96"
->
-<input
-  type="range"
-  id="base-font-size"
-  min="12"
-  max="16"
-  step="1"
-  value="14"
->
+<input type="color" id="background-color" value="#2eec96">
+<input type="range" id="base-font-size" min="12" max="16" step="1" value="14">
 ```
 
 Set your initial input values to match the starting values of your CSS variables. You could also set these through JavaScript on page load to remain DRY.
@@ -112,7 +103,7 @@ const handleInputChange = (property, pixels) => {
 
 Next, I’ll need to add some functionality to grab the values from localStorage and set them on page load. I will need to set the CSS variable and the input value so everything is consistent. Once again, I’ve extracted the logic to a separate function. And again, be careful of pixel values. This time, when setting the input values, the ‘px’ string will need to be removed.
 
-```css
+```javascript
 const setValueFromLocalStorage = property => {
   let value = localStorage.getItem(property);
   document.documentElement.style.setProperty(

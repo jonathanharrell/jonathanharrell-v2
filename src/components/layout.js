@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 import {MDXProvider} from "@mdx-js/react";
 import {Link} from "gatsby";
 import {Link as LinkIcon} from "react-feather";
-import "highlight.js/styles/atom-one-light.css";
+import '../styles/prism.css';
 
 const components = {
   h2: ({ id, children }) => {

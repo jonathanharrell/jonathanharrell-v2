@@ -24,6 +24,7 @@ body {
         prose-a:underline-offset-[2px]
         prose-li:marker:text-red-500
         prose-figcaption:font-idealSans
+        prose-figcaption:text-sm
         prose-img:my-0
         prose-pre:my-8 sm:prose-pre:my-6
         prose-pre:-mx-8 sm:prose-pre:mx-0

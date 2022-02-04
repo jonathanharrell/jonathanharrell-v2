@@ -25,17 +25,20 @@ I have been searching for a while now for a way to bring these to the web with p
 Say I’m building a blog post template. I’ll need a header to contain the title and date, and a section for share links. Then I’ll need the primary blog content, consisting of headings, paragraphs, images, and, yes, callouts. First let’s write some semantic markup:
 
 ```html
-<article>
+<article class="blog-post">
   <header>
     <h1>Article Heading</h1>
   </header>
-  <p>...</p>
+  <p>Paragraph text</p>
+  <figure>
+    <img src="image.jpg" alt=""/>
+  </figure>
   <h2>Section Heading</h2>
-  <p>...</p>
+  <p>Paragraph text</p>
   <aside>
-    <p>...</p>
+    <p>Callout text</p>
   </aside>
-  <p>...</p>
+  <p>Paragraph text</p>
 </article>
 ```
 
@@ -67,27 +70,33 @@ Now, progressively enhance for browsers that do support CSS grid using an `@supp
 }
 ```
 
+<figure>
+  <img src="../../assets/css-grid-layout-1.svg" alt=""/>
+  <figcaption>Test</figcaption>
+</figure>
+
 Here I’m setting up the `.blog-post` article as a 12-column grid, each with a width of 1 fraction unit and a gap between each column of 2rem. Now it’s time to start placing content on the grid:
 
 ```css
-.blog-post-header {
+.blog-post header {
   grid-column-start: 2;
   grid-column-end: span 3;
 }
 
+.blog-post h2,
 .blog-post p,
-.blog-post h2 {
+.blog-post figure {
   grid-column-start: 5;
-  grid-column-end: span 6;
-}
-
-.blog-post-share {
-  grid-column-start: span 1;
-  grid-column-end: -2;
+  grid-column-end: span 4;
 }
 ```
 
-Now, the post header, post paragraphs and headings, and share links all sit next to each other in a row. Pretty cool. The callouts are up next:
+<figure>
+  <img src="../../assets/css-grid-layout-2.svg" alt=""/>
+  <figcaption>Test</figcaption>
+</figure>
+
+Now, the post header and content sit next to each other in a row. The callouts are up next:
 
 ```css
 .blog-post aside {

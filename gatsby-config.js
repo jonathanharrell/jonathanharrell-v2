@@ -27,7 +27,7 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         rehypePlugins: [
-          require("rehype-highlight"),
+          require("@mapbox/rehype-prism"),
           require("rehype-slug"),
         ]
       }
