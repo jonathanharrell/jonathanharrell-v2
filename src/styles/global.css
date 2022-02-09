@@ -19,10 +19,10 @@ body {
         prose-headings:tracking-tight
         prose-headings:text-gray-700
         prose-a:font-normal
-        hover:prose-a:text-red-500
-        prose-a:decoration-red-500
+        hover:prose-a:text-orange-500
+        prose-a:decoration-orange-500
         prose-a:underline-offset-[2px]
-        prose-li:marker:text-red-500
+        prose-li:marker:text-orange-500
         prose-figcaption:font-idealSans
         prose-figcaption:text-sm
         prose-img:my-0
@@ -31,12 +31,10 @@ body {
         lg:prose-pre:p-8
         prose-pre:py-6
         prose-pre:px-8 sm:prose-pre:px-6
-        prose-pre:bg-gray-100
+        prose-pre:bg-gray-800
         prose-pre:rounded-none sm:prose-pre:rounded-lg lg:prose-pre:rounded-xl
         prose-pre:!leading-relaxed
-        prose-pre:font-medium
-        prose-pre:text-gray-500
-        prose-code:font-medium
+        prose-pre:text-white
         prose-code:before:content-['']
         prose-code:after:content-['']
     ;
@@ -52,6 +50,6 @@ body {
     @apply w-full;
 }
 
-pre > code.hljs {
-    @apply p-0 bg-transparent text-inherit;
+.article-body p code {
+    @apply font-medium;
 }

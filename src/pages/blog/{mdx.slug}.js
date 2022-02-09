@@ -2,23 +2,20 @@ import React from "react"
 import {graphql} from "gatsby"
 import {MDXRenderer} from "gatsby-plugin-mdx"
 import Layout from "../../components/layout";
+import {formatDate} from "../../helpers";
 
 export default function BlogPost({
-                                   data: {mdx}
-                                 }) {
+  data: {mdx}
+}) {
   const {frontmatter, body} = mdx;
   const {date, title, description} = frontmatter;
-  const formattedDate = new Date(date).toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric'
-  });
+  const formattedDate = formatDate(date);
 
   return (
     <Layout>
       <article>
         <header className="text-center">
-          <p className="mb-6 sm:mb-8 font-idealSans text-sm sm:text-base text-red-500">
+          <p className="mb-6 sm:mb-8 font-idealSans text-sm sm:text-base text-orange-500">
             {formattedDate}
           </p>
           <h1 className="max-w-[22ch] mx-auto font-idealSans text-3xl sm:text-4xl lg:text-5xl xl:leading-[1.125] font-medium tracking-tight">
