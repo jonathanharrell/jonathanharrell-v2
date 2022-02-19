@@ -4,18 +4,19 @@ slug: semantic-image-overlays-with-object-fit
 date: 2017-08-27T20:17:00.000Z
 title: Semantic Image Overlays With Object-Fit
 description: >-
-  Learn how to use CSS grid and the object-fit property to create an image grid with overlays that is semantic and great for SEO.
+  Learn how to use the object-fit property to create an image with an overlay that is simple and semantic.
 tags:
   - css
   - images
 ---
-Think of how many times you have coded a grid of images with an overlay that appears on hover and displays some sort of text. With the `object-fit` property getting wider support, there is now a clean, semantic way of doing this.
+Think of how many times you have coded a grid of images with an overlay that appears on hover and displays some sort of text. With the `object-fit` property getting wider support, there is now a clean, semantic way to do this.
 
 <figure>
   <img src="../../assets/semantic-image-overlays.png" alt=""/>
+  <figcaption>The article element contains two absolutely positioned children: an image and a div with text.</figcaption>
 </figure>
 
-## The Old Way (without `object-fit`)
+## The Old Way (without object-fit)
 
 Here’s how I used to accomplish this:
 
@@ -23,14 +24,14 @@ Here’s how I used to accomplish this:
 <article class="blog-post-teaser">
   <div class="image" style="background-image: url(...)"></div>
   <div class="overlay">
-    <h2>
+    <h3>
       <a href="...">Article Title</a>
-    </h2>
+    </h3>
   </div>
 </article>
 ```
 
-The markup involved an article containing a plain div with a background image applied, and an overlay div that contained the text that needed to sit on top of the image. I would then absolutely position both the image and the overlay. The size of the div would be determined by a little percentage padding trick on the article:
+The markup involved an `article` containing a `div` with a background image applied, and an overlay `div` that contained the text that needed to sit on top of the image. I would then absolutely position both the image and the overlay. The size of the `div` would be determined by a percentage padding trick on the article:
 
 ```css
 .blog-post-teaser {
@@ -55,43 +56,31 @@ The markup involved an article containing a plain div with a background image ap
 }
 ```
 
-This approach gives us a lot of control but it’s really not as semantic as it could be. The image for each article seems like a pretty important piece of content, and the browser doesn’t know that it’s an image. And we can’t feed in `alt` tags to help with SEO.
+The key downside with this approach is that it's not as semantic as it could be. The image for each article seems like a pretty important piece of content, and the browser doesn’t know that it’s an image. And we can’t feed in `alt` tags to help with SEO.
 
-How do we improve semantics while retaining control of the image sizing so everything fits nicely into a grid? Enter `object-fit`.
+How do we improve semantics while retaining control of the image sizing? Enter `object-fit`.
 
-## The New Way (with `object-fit`)
+## The New Way (with object-fit)
 
 Here’s what my markup looks like now:
 
 ```html
 <article class="blog-post-teaser">
-  <figure>
-    <img src="..." alt="...">
-    <figcaption>
-      <h2>
-        <a href="...">
-          Article Title
-        </a>
-      </h2>
-    </figcaption>
-  </figure>
+  <img src="..." alt="...">
+  <div class="overlay">
+    <h3>
+      <a href="...">Article Title</a>
+    </h3>
+  </div>
 </article>
 ```
 
-Now the browser knows we’re serving up an image. It even knows that the article title is both a heading for the article and a caption for the image. Search engines can now access alternative text. Let’s look at the styling:
+Now the browser knows we’re serving up an image. Search engines can properly access alternative text. Let’s look at the styling:
 
 ```css
-.blog-post-teaser figure {
+.blog-post-teaser {
   position: relative;
   padding: 30% 0;
-}
-
-.blog-post-teaser figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .blog-post-teaser img {
@@ -102,9 +91,17 @@ Now the browser knows we’re serving up an image. It even knows that the articl
   height: 100%;
   object-fit: cover;
 }
+
+.blog-post-teaser .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 ```
 
-It’s almost identical, only that now we’re using the `figure` element to control sizing, and we’re using the `object-fit` property on the image element. This works the exact same way as setting `background-size: cover`. The image will fill the specified space without stretching.
+It’s almost identical, only that now we’re using the `img` element and applying the `object-fit` property. This works the exact same way as setting `background-size: cover`. The image will fill the specified space.
 
 ## Browser Support of object-fit
 

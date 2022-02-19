@@ -4,16 +4,16 @@ slug: contextual-callouts-with-css-grid
 date: 2017-08-10T20:17:00.000Z
 title: Contextual Callouts with CSS Grid
 description: >-
-  Using the power of CSS grid, it is now easier than ever before to create
+  Using the power of CSS grid, it is now easier than ever to create
   callouts—small paragraphs that sit next to the primary text and offer
   additional information.
 tags:
   - css
   - layout
 ---
-At long last, contextual callouts are possible with CSS grid. Contextual callouts are small paragraphs that sit beside primary text and offer secondary information to a reader. They have long been a feature of books, magazines and other printed materials. I particularly enjoy coming across these small asides when reading, as they add texture and interest to the content.
+At long last, contextual callouts are possible with CSS grid. Contextual callouts are small paragraphs that sit beside primary text and offer secondary information to a reader. They have long been a feature of books, magazines and other printed materials. I enjoy coming across these small asides while reading, as they add texture and interest to the content.
 
-I have been searching for a while now for a way to bring these to the web with pure CSS. The solutions in the past have typically been fairly messy, requiring annoying floats and clearing, or manual absolute positioning. That is changing now, thanks to CSS grid.
+I've been searching for a while now for a way to bring these to the web with pure CSS. The solutions in the past have typically been fairly messy, requiring complex floats and clearing, or manual absolute positioning. That is changing now, thanks to CSS grid.
 
 <figure className="lg:-ml-24 lg:-mr-24">
   <img src="../../assets/css-grid-layout.svg" alt=""/>
@@ -21,7 +21,7 @@ I have been searching for a while now for a way to bring these to the web with p
 
 ## The Grid Markup
 
-Say I’m building a blog post template. I’ll need a header to contain the title and date, and a section for share links. Then I’ll need the primary blog content, consisting of headings, paragraphs, images, and, yes, callouts. First let’s write some semantic markup:
+Say I’m building a blog post template. First, I’ll need a header to contain the title. Then I’ll need the primary blog content, consisting of headings, paragraphs, images, and, callouts. First let’s write some semantic markup:
 
 ```html
 <article class="blog-post">
@@ -30,7 +30,7 @@ Say I’m building a blog post template. I’ll need a header to contain the tit
   </header>
   <p>Paragraph text</p>
   <figure>
-    <img src="image.jpg" alt=""/>
+    <img src="image.jpg" alt="Alt text"/>
   </figure>
   <h2>Section Heading</h2>
   <p>Paragraph text</p>
@@ -41,23 +41,21 @@ Say I’m building a blog post template. I’ll need a header to contain the tit
 </article>
 ```
 
-The article element contains the header, share links aside, and all post content as direct children. This will be important as we apply CSS grid styles to the post. Callouts are written as `aside` elements, perfect for content that is connected tangentially to the rest of the document, and appear in the document directly after the paragraph they are connected to.
+The article element contains the header and all post content as direct children. This will be important as we apply CSS grid styles to the post. Callouts are written using `aside` elements, perfect for content that is connected tangentially to the rest of the document, and appear in the document directly before the paragraph they are connected to. Each `aside` element contains a paragraph of its own.
 
 ## Fallback Styling
 
-First, we’ll apply some basic styles for browsers that don’t yet support CSS grid. We’ll add some margin, padding and set a max-width of 70 characters using the `ch` unit:
+Next, we’ll apply some basic styles for browsers that don’t yet support CSS grid. We’ll set a max-width of 70 characters using the `ch` unit:
 
 ```css
 .blog-post {
   max-width: 70ch;
-  margin: 3rem auto;
-  padding: 1.5rem;
 }
 ```
 
 ## Using CSS Grid
 
-Now, progressively enhance for browsers that do support CSS grid using an `@supports` query:
+Now, let's progressively enhance for browsers that *do* support CSS grid using a `@supports` query:
 
 ```css
 @supports(display: grid) {
@@ -71,10 +69,10 @@ Now, progressively enhance for browsers that do support CSS grid using an `@supp
 
 <figure>
   <img src="../../assets/css-grid-layout-1.png" alt=""/>
-  <figcaption>Test</figcaption>
+  <figcaption>A basic twelve-column grid.</figcaption>
 </figure>
 
-Here I’m setting up the `.blog-post` article as a 12-column grid, each with a width of 1 fraction unit and a gap between each column of 2rem. Now it’s time to start placing content on the grid:
+Now it’s time to start placing content on the grid:
 
 ```css
 .blog-post header {
@@ -92,28 +90,33 @@ Here I’m setting up the `.blog-post` article as a 12-column grid, each with a 
 
 <figure>
   <img src="../../assets/css-grid-layout-2.png" alt=""/>
-  <figcaption>Test</figcaption>
+  <figcaption>The post header and content placed on the grid. Each post child implicitly creates a new grid row.</figcaption>
 </figure>
 
-Now, the post header and content sit next to each other in a row. The callouts are up next:
+The post header and content now sit next to each other in a row. The callouts are up next:
 
 ```css
 .blog-post aside {
+  position: relative;
   grid-column-start: 3;
   grid-column-end: 5;
+}
+
+.blog-post aside p {
+  position: absolute;
 }
 ```
 
 <figure>
   <img src="../../assets/css-grid-layout-3.png" alt=""/>
-  <figcaption>Test</figcaption>
+  <figcaption>The aside element positioned on the grid.</figcaption>
 </figure>
 
-The asides are now pulled to the left of the paragraph immediately preceding them, looking exactly like callouts. If you wanted more control over the positioning of these callouts (say you wanted one at the _bottom_ of the row, rather than at the top), you could apply some targeted styling with the `align-self` property, but for this exercise, I’m assuming a more generic approach for content generated from a CMS.
+The asides are now pulled to the left of the paragraph immediately following them, looking exactly like callouts. The paragraphs within each callout have `absolute` positioning applied so that they don't force the proceeding paragraph down if they are taller than the adjacent content.
 
 ## Bonus: Full-Width Figures
 
-Here’s my styling for figures within a post, causing them to stretch the full width of the grid container. The rest of the content is still fit to a narrower width.
+I can easily style figures within the post so that they stretch across the full width of the grid container. The rest of the content remains at a narrower width.
 
 ```css
 .blog-post figure {
@@ -137,7 +140,7 @@ Here’s my styling for figures within a post, causing them to stretch the full 
 
 <figure>
   <img src="../../assets/css-grid-layout-4.png" alt=""/>
-  <figcaption>Test</figcaption>
+  <figcaption>A full-width figure, retaining a narrow figcaption.</figcaption>
 </figure>
 
-I set the figure up to span across all 12 columns of its parent grid. I set up a nested grid within the figure with the same number of columns and spacing as the parent. This allows me to have the `img` element to span the full width, while the `figcaption` is aligned with the rest of the primary text in the blog post.
+The `figure` now spans all 12 columns of the parent grid. I set up a nested grid within the `figure` with the same number of columns and spacing as the parent. This allows me to have the `img` element span the full width, while the `figcaption` is aligned with the narrower post content. Check out the [live experiment here](https://codepen.io/jonathanharrell/pen/QZwqar).
