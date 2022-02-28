@@ -47,69 +47,57 @@ Ligatures are single glyphs made from two or more characters. They typically pre
 ### common-ligatures
 
 <figure>
-  <img src="../../assets/common-ligatures.png" alt="test"/>
+  <img src="../../assets/common-ligatures.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
 These are ligatures that the type designer has decided should be used in normal conditions. In most circumstances you should use these. Most browsers enable them by default.
 
 ```css
-font-variant-ligatures: common-ligatures; /* enable */
-font-variant-ligatures: no-common-ligatures; /* disable */
-
-font-feature-settings: 'liga' 1; /* low-level enable */
-font-feature-settings: 'liga' 0; /* low-level disable */
+font-variant-ligatures: common-ligatures;
+font-variant-ligatures: no-common-ligatures;
 ```
 
 ### discretionary-ligatures
 
 <figure>
-  <img src="../../assets/discretionary-ligatures.png" alt="test"/>
+  <img src="../../assets/discretionary-ligatures.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
 These are ligatures which can be used for typographic purposes, for example to achieve a special effect. These are disabled by default.
 
 ```css
-font-variant-ligatures: discretionary-ligatures; /* enable */
-font-variant-ligatures: no-discretionary-ligatures; /* disable */
-
-font-feature-settings: 'dlig' 1; /* low-level enable */
-font-feature-settings: 'dlig' 0; /* low-level disable */
+font-variant-ligatures: discretionary-ligatures;
+font-variant-ligatures: no-discretionary-ligatures;
 ```
 
 ### contextual
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/contextual-ligatures.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
 These are alternate ligatures that are affected by their surrounding context. They often harmonize the shapes of grouped glyphs. These are enabled by default.
 
 ```css
-font-variant-ligatures: contextual; /* enable */
-font-variant-ligatures: no-contextual; /* disable */
-
-font-feature-settings: 'calt' 1; /* low-level enable */
-font-feature-settings: 'calt' 0; /* low-level disable */
+font-variant-ligatures: contextual;
+font-variant-ligatures: no-contextual;
 ```
 
 ### historical-ligatures
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/historical-ligatures.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
 These are ligatures which could be considered a subset of discretionary, but are specifically used to achieve a historical effect. These are disabled by default.
 
 ```css
-font-variant-ligatures: historical-ligatures; /* enable */
-font-variant-ligatures: no-historical-ligatures; /* disable */
-
-font-feature-settings: 'hlig' 1; /* low-level enable */
-font-feature-settings: 'hlig' 0; /* low-level disable */
+font-variant-ligatures: historical-ligatures;
+font-variant-ligatures: no-historical-ligatures;
 ```
 
 ## font-variant-position
@@ -121,7 +109,7 @@ Thankfully, there is now a way to enable true subscripts and superscripts with `
 ### sub
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/subscript.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -130,15 +118,12 @@ This enables true subscript characters.
 ```css
 font-variant-position: sub; /* enable */
 font-variant-position: normal; /* disable both variants */
-
-font-feature-settings: 'subs' 1; /* low-level enable */
-font-feature-settings: 'subs' 0; /* low-level disable */
 ```
 
 ### super
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/superscript.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -147,9 +132,6 @@ This enables true superscript characters.
 ```css
 font-variant-position: super; /* enable */
 font-variant-position: normal; /* disable both variants */
-
-font-feature-settings: 'sups' 1; /* low-level enable */
-font-feature-settings: 'sups' 0; /* low-level disable */
 ```
 
 ## font-variant-caps
@@ -159,24 +141,21 @@ A capital is not a capital is not a capital. The most significant use of `font-v
 ### small-caps
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/small-caps.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
 Small caps are designed to be the same height as lowercase letters and are used to capitalize words within running text. They make for a more cohesive and readable paragraph.
 
 ```css
-font-variant-caps: small-caps;  /* enable */
+font-variant-caps: small-caps; /* enable */
 font-variant-caps: normal; /* disable all variants */
-
-font-feature-settings: 'smcp' 1; /* low-level enable */
-font-feature-settings: 'smcp' 0; /* low-level disable */
 ```
 
 ### all-small-caps
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/all-small-caps.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -185,15 +164,12 @@ The `small-caps` value will only replace lowercase letters with small caps. To r
 ```css
 font-variant-caps: all-small-caps; /* enable */
 font-variant-caps: normal; /* disable all variants */
-
-font-feature-settings: 'smcp' 1, 'c2sc' 1; /* low-level enable */
-font-feature-settings: 'smcp' 1, 'c2sc' 0; /* low-level disable */
 ```
 
 ### petite-caps
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/petite-caps.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -202,15 +178,12 @@ Standard small caps will typically appear slightly larger than the x-height of t
 ```css
 font-variant-caps: petite-caps; /* enable */
 font-variant-caps: normal; /* disable all variants */
-
-font-feature-settings: 'pcap' 1; /* low-level enable */
-font-feature-settings: 'pcap' 0; /* low-level disable */
 ```
 
 ### all-petite-caps
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/all-petite-caps.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -219,15 +192,12 @@ Similarly to `all-small-caps`, this converts all letters, both lower and upperca
 ```css
 font-variant-caps: all-petite-caps; /* enable */
 font-variant-caps: normal; /* disable all variants */
-
-font-feature-settings: 'pcap' 1, 'c2pc' 1; /* low-level enable */
-font-feature-settings: 'pcap' 1, 'c2pc' 0; /* low-level disable */
 ```
 
 ### unicase
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/unicase.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -236,15 +206,12 @@ This feature maps upper and lowercase letters to a mixed set of lowercase and sm
 ```css
 font-variant-caps: unicase; /* enable */
 font-variant-caps: normal; /* disable all variants */
-
-font-feature-settings: 'unic' 1; /* low-level enable */
-font-feature-settings: 'unic' 0; /* low-level disable */
 ```
 
 ### titling-caps
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/titling-caps.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -253,9 +220,6 @@ Standard uppercase letters are designed for use alongside lowercase letters and 
 ```css
 font-variant-caps: titling-caps; /* enable */
 font-variant-caps: normal; /* disable all variants */
-
-font-feature-settings: 'titl' 1; /* low-level enable */
-font-feature-settings: 'titl' 0; /* low-level disable */
 ```
 
 ## font-variant-numeric
@@ -275,7 +239,7 @@ font-variant-numeric: lining-nums tabular-nums;
 ### lining-nums
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/lining-nums.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -284,15 +248,12 @@ Lining numerals approximate capital letters and are uniform in height. They shou
 ```css
 font-variant-numeric: lining-nums; /* enable */
 font-variant-numeric: normal; /* disable all variants */
-
-font-feature-settings: 'lnum' 1; /* low-level enable */
-font-feature-settings: 'lnum' 0; /* low-level disable */
 ```
 
 ### oldstyle-nums
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/oldstyle-nums.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -301,27 +262,26 @@ Old-style numerals have varying heights and alignments and are therefore more si
 ```css
 font-variant-numeric: oldstyle-nums; /* enable */
 font-variant-numeric: normal; /* disable all variants */
-
-font-feature-settings: 'onum' 1; /* low-level enable */
-font-feature-settings: 'onum' 0; /* low-level disable */
 ```
 
 ### proportional-nums
+
+<figure>
+  <img src="../../assets/proportional-nums.png" alt=""/>
+  <figcaption>Test</figcaption>
+</figure>
 
 Proportional numerals have variable spacing and blend in with horizontal text. They should be used in most situations, other than numeric tables where vertical alignment is important. Usually numbers are proportional figures by default.
 
 ```css
 font-variant-numeric: proportional-nums; /* enable */
 font-variant-numeric: normal; /* disable all variants */
-
-font-feature-settings: 'pnum' 1; /* low-level enable */
-font-feature-settings: 'pnum' 0; /* low-level disable */
 ```
 
 ### tabular-nums
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/tabular-nums.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -330,15 +290,12 @@ Tabular numerals have the same width and should be used in numeric tables to all
 ```css
 font-variant-numeric: tabular-nums; /* enable */
 font-variant-numeric: normal; /* disable all variants */
-
-font-feature-settings: 'tnum' 1; /* low-level enable */
-font-feature-settings: 'tnum' 0; /* low-level disable */
 ```
 
 ### diagonal-fractions
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="../../assets/diagonal-fractions.png" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -347,15 +304,12 @@ By default, fractions will display as lowercase letters with a slash. Proper fra
 ```css
 font-variant-numeric: diagonal-fractions; /* enable */
 font-variant-numeric: normal; /* disable all variants */
-
-font-feature-settings: 'frac' 1; /* low-level enable */
-font-feature-settings: 'frac' 0; /* low-level disable */
 ```
 
 ### stacked-fractions
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
+  <img src="https://via.placeholder.com/800x400" alt=""/>
   <figcaption>Test</figcaption>
 </figure>
 
@@ -364,9 +318,6 @@ Stacked fractions are not as common of a feature in most web fonts as diagonal f
 ```css
 font-variant-numeric: stacked-fractions; /* enable */
 font-variant-numeric: normal; /* disable all variants */
-
-font-feature-settings: 'afrc' 1; /* low-level enable */
-font-feature-settings: 'afrc' 0; /* low-level disable */
 ```
 
 ### ordinal
