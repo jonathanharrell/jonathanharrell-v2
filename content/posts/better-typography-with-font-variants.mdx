@@ -369,8 +369,8 @@ font-variant-alternates: normal; /* disable all variants */
 ### stylistic(feature-value-name)
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="test"/>
-  <figcaption>Test</figcaption>
+  <img src="../../assets/stylistic.png" alt=""/>
+  <figcaption>Font family: Ideal Sans</figcaption>
 </figure>
 
 Use this to select stylistic features on an individual basis. In order to use this and several of the following `font-variant-alternates` functions, you must define a `font-feature-value` using the `@font-feature-values` rule. For example, if you wanted to select stylistic feature number 1 in the font you are using, you would first define the feature value, and then use it within the `font-variant-alternates: stylistic()` function.
@@ -382,9 +382,6 @@ Use this to select stylistic features on an individual basis. In order to use th
 
 font-variant-alternates: stylistic(inscriptional-g); /* enable */
 font-variant-alternates: normal; /* disable all variants */
-
-font-feature-settings: salt 1; /* low-level enable */
-font-feature-settings: salt 0; /* low-level disable */
 ```
 
 ### styleset(feature-value-name)
