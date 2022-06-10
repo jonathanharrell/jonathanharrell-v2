@@ -15,6 +15,55 @@ module.exports = {
       }
     },
     "gatsby-plugin-image",
+    {
+      resolve: "gatsby-plugin-svgr-svgo",
+      options: {
+        inlineSvgOptions: [
+          {
+            test: /\.svg$/,
+            svgoConfig: {
+              plugins: [
+                {
+                  name: "preset-default",
+                  params: {
+                    overrides: {
+                      removeViewBox: false
+                    }
+                  }
+                },
+                { name: "removeDimensions" },
+                {
+                  name: 'replaceColors',
+                  type: 'perItem',
+                  fn: (item) => {
+                    if (!item.attributes) return;
+
+                    const attributes = Object.entries(item.attributes);
+                    const valuesToReplace = {
+                      '#F3F4F6': 'background',
+                      '#101727': 'text',
+                      '#D1D5DC': 'image',
+                      'multiply': 'overlay-blend-mode'
+                    }
+
+                    attributes.forEach(([key, value]) => {
+                      const matchingKey = Object.keys(valuesToReplace).find(key => value.includes(key));
+
+                      if (matchingKey) {
+                        item.attributes[key] = item.attributes[key].replace(
+                          matchingKey,
+                          `var(--diagram-${valuesToReplace[matchingKey]})`
+                        );
+                      }
+                    });
+                  },
+                },
+              ]
+            }
+          }
+        ]
+      }
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
@@ -28,7 +77,7 @@ module.exports = {
       options: {
         rehypePlugins: [
           require("@mapbox/rehype-prism"),
-          require("rehype-slug"),
+          require("rehype-slug")
         ]
       }
     },

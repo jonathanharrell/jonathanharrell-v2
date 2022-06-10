@@ -14,18 +14,20 @@ export default function BlogPost({
   return (
     <Layout>
       <article>
-        <header className="text-center">
-          <p className="mb-6 sm:mb-8 font-idealSans text-sm sm:text-base text-orange-500">
+        <header className="flex flex-col gap-4 max-w-[58ch] mx-auto mb-12 lg:text-lg">
+          <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
             {formattedDate}
           </p>
-          <h1 className="max-w-[22ch] mx-auto font-idealSans text-3xl sm:text-4xl lg:text-5xl xl:leading-[1.125] font-medium tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl leading-[1.125] font-bold tracking-tight">
             {title}
           </h1>
-          <p className="max-w-[60ch] mx-auto mt-6 sm:mt-8 font-idealSans italic text-sm sm:text-base !leading-loose">
+          <p className="text-xl sm:text-2xl leading-tight sm:leading-tighter font-medium">
             {description}
           </p>
+          <div>
+            <button>share</button>
+          </div>
         </header>
-        <hr className="max-w-[160px] mx-auto my-10 sm:my-12 lg:my-16"/>
         <div className="article-body">
           <MDXRenderer>
               {body}

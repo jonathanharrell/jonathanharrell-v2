@@ -29,9 +29,9 @@ const components = {
   }
 }
 
-export default function Layout({children}) {
+export default function Layout({children, ...props}) {
   return (
-    <>
+    <div {...props}>
       <Helmet>
         <link
           rel="stylesheet"
@@ -40,8 +40,8 @@ export default function Layout({children}) {
         />
       </Helmet>
       <header className="container flex items-center justify-between mx-auto py-4 px-8">
-        <Link to="/" className="font-idealSans">JH</Link>
-        <nav className="font-idealSans">
+        <Link to="/">JH</Link>
+        <nav>
           <ul className="flex">
             <li className="ml-8">
               <Link to="/blog">Articles</Link>
@@ -63,6 +63,6 @@ export default function Layout({children}) {
       <footer className="container mx-auto py-4 px-8">
         footer
       </footer>
-    </>
+    </div>
   )
 }

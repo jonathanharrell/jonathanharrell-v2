@@ -11,13 +11,20 @@ tags:
   - css
   - layout
 ---
+import Figure from "../../src/components/figure";
+import GridLayout from "../../static/assets/css-grid-layout.svg";
+import GridLayout1 from "../../static/assets/css-grid-layout-1.svg";
+import GridLayout2 from "../../static/assets/css-grid-layout-2.svg";
+import GridLayout3 from "../../static/assets/css-grid-layout-3.svg";
+import GridLayout4 from "../../static/assets/css-grid-layout-4.svg";
+
 At long last, contextual callouts are possible with CSS grid. Contextual callouts are small paragraphs that sit beside primary text and offer secondary information to a reader. They have long been a feature of books, magazines and other printed materials. I enjoy coming across these small asides while reading, as they add texture and interest to the content.
 
 I've been searching for a while now for a way to bring these to the web with pure CSS. The solutions in the past have typically been fairly messy, requiring complex floats and clearing, or manual absolute positioning. That is changing now, thanks to CSS grid.
 
-<figure className="lg:-ml-24 lg:-mr-24">
-  <img src="../../assets/css-grid-layout.svg" alt=""/>
-</figure>
+<Figure wide={true}>
+  <GridLayout />
+</Figure>
 
 ## The Grid Markup
 
@@ -67,10 +74,12 @@ Now, let's progressively enhance for browsers that *do* support CSS grid using a
 }
 ```
 
-<figure>
-  <img src="../../assets/css-grid-layout-1.png" alt=""/>
-  <figcaption>A basic twelve-column grid.</figcaption>
-</figure>
+<Figure
+  caption="A basic twelve-column grid."
+  wide={true}
+>
+  <GridLayout1 />
+</Figure>
 
 Now it’s time to start placing content on the grid:
 
@@ -88,10 +97,12 @@ Now it’s time to start placing content on the grid:
 }
 ```
 
-<figure>
-  <img src="../../assets/css-grid-layout-2.png" alt=""/>
-  <figcaption>The post header and content placed on the grid. Each post child implicitly creates a new grid row.</figcaption>
-</figure>
+<Figure
+  caption="The post header and content placed on the grid. Each post child implicitly creates a new grid row."
+  wide={true}
+>
+  <GridLayout2 />
+</Figure>
 
 The post header and content now sit next to each other in a row. The callouts are up next:
 
@@ -107,10 +118,12 @@ The post header and content now sit next to each other in a row. The callouts ar
 }
 ```
 
-<figure>
-  <img src="../../assets/css-grid-layout-3.png" alt=""/>
-  <figcaption>The aside element positioned on the grid.</figcaption>
-</figure>
+<Figure
+  caption="The aside element positioned on the grid."
+  wide={true}
+>
+  <GridLayout3 />
+</Figure>
 
 The asides are now pulled to the left of the paragraph immediately following them, looking exactly like callouts. The paragraphs within each callout have `absolute` positioning applied so that they don't force the proceeding paragraph down if they are taller than the adjacent content.
 
@@ -138,9 +151,11 @@ I can easily style figures within the post so that they stretch across the full 
 }
 ```
 
-<figure>
-  <img src="../../assets/css-grid-layout-4.png" alt=""/>
-  <figcaption>A full-width figure, retaining a narrow figcaption.</figcaption>
-</figure>
+<Figure
+  caption="A full-width figure, retaining a narrow figcaption."
+  wide={true}
+>
+  <GridLayout4 />
+</Figure>
 
 The `figure` now spans all 12 columns of the parent grid. I set up a nested grid within the `figure` with the same number of columns and spacing as the parent. This allows me to have the `img` element span the full width, while the `figcaption` is aligned with the narrower post content. Check out the [live experiment here](https://codepen.io/jonathanharrell/pen/QZwqar).

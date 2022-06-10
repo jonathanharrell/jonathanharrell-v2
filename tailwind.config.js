@@ -5,9 +5,10 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
+      sf: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       idealSans: ['Ideal Sans SSm A', 'Ideal Sans SSm B', 'Helvetica', 'sans-serif'],
       mercury: ['Mercury SSm A', 'Mercury SSm B', 'serif'],
-      mono: ['Operator Mono SSm A', 'Operator Mono SSm B', 'monospace']
+      mono: ['SF Mono', 'SFMono-Regular', 'ui-monospace', 'Menlo', 'monospace']
     },
     extend: {},
   },

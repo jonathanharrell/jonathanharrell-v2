@@ -2,8 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light dark;
+
+  --diagram-background: #F3F4F6;
+  --diagram-text: #111827;
+  --diagram-image: #D1D5DC;
+  --diagram-overlay-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --diagram-background: #1F2937;
+    --diagram-text: #E5E7EB;
+    --diagram-image: #374151;
+    --diagram-overlay-blend-mode: screen;
+  }
+}
+
 body {
-    @apply font-mercury text-gray-700;
+    @apply
+      bg-white dark:bg-gray-900
+      font-sf
+      text-gray-800 dark:text-gray-100;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -12,29 +33,32 @@ body {
 .article-body {
     @apply
         prose lg:prose-lg
-        max-w-none sm:max-w-[65ch] xl:max-w-[75ch]
+        max-w-[58ch]
         mx-auto
+        text-gray-800 dark:text-gray-100
         prose-headings:relative
-        prose-headings:font-idealSans
         prose-headings:tracking-tight
-        prose-headings:text-gray-700
+        prose-headings:text-gray-800 dark:prose-headings:text-gray-100
+        prose-h2:!mb-4
+        prose-h2:!text-2xl
+        prose-p:leading-normal
+        prose-strong:text-inherit
         prose-a:font-normal
-        hover:prose-a:text-orange-500
-        prose-a:decoration-orange-500
+        prose-a:text-orange-500
+        prose-a:no-underline
+        hover:prose-a:underline
         prose-a:underline-offset-[2px]
-        prose-li:marker:text-orange-500
-        prose-figcaption:font-idealSans
-        prose-figcaption:text-sm
+        prose-figure:!my-8
+        md:prose-figure:!my-12
+        prose-figcaption:!text-xs
+        prose-figcaption:font-semibold
+        prose-figcaption:text-gray-500
         prose-img:my-0
-        prose-pre:my-8 sm:prose-pre:my-6
-        prose-pre:-mx-8 sm:prose-pre:mx-0
-        lg:prose-pre:p-8
-        prose-pre:py-6
         prose-pre:px-8 sm:prose-pre:px-6
-        prose-pre:bg-gray-800
-        prose-pre:rounded-none sm:prose-pre:rounded-lg lg:prose-pre:rounded-xl
-        prose-pre:!leading-relaxed
-        prose-pre:text-white
+        prose-pre:!bg-gray-50 dark:prose-pre:!bg-gray-800
+        prose-pre:!text-gray-800 dark:prose-pre:!text-gray-100
+        prose-pre:!rounded-lg
+        prose-pre:!leading-[1.35]
         prose-code:before:content-['']
         prose-code:after:content-['']
     ;
@@ -42,14 +66,22 @@ body {
     font-feature-settings: "liga" 1;
 }
 
-.article-body > p:first-of-type:first-letter {
-    @apply float-left mt-[8px] md:mt-3 pr-2 font-idealSans font-semibold text-6xl leading-[0.8] text-gray-700;
+.article-body > figure img,
+.article-body > figure svg {
+    @apply w-full rounded-lg;
 }
 
-.article-body > figure img {
-    @apply w-full;
+.article-body h2 + figure,
+.article-body h3 + figure {
+  @apply !mt-4;
 }
 
 .article-body p code {
-    @apply font-medium;
+    @apply
+      py-0.5
+      px-1
+      rounded-sm
+      bg-gray-100 dark:bg-gray-800
+      font-normal
+      text-gray-800 dark:text-gray-100;
 }
