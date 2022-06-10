@@ -8,7 +8,7 @@ const Blog = ({data: {allMdx}}) => {
 
   return (
     <Layout className="bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto">
+      <div className="xl:max-w-4xl mx-auto">
         <div>
           <h1 className="mb-12 text-sm sm:text-2xl font-semibold">
             Articles
