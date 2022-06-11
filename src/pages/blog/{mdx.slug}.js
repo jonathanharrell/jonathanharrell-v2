@@ -2,6 +2,7 @@ import React from "react"
 import {graphql} from "gatsby"
 import {MDXRenderer} from "gatsby-plugin-mdx"
 import Layout from "../../components/layout";
+import Share from '../../components/share';
 import {formatDate} from "../../helpers";
 
 export default function BlogPost({
@@ -24,9 +25,7 @@ export default function BlogPost({
           <p className="text-xl sm:text-2xl leading-tight sm:leading-tighter font-medium">
             {description}
           </p>
-          <div>
-            <button>share</button>
-          </div>
+          <Share title={title} description={description} />
         </header>
         <div className="article-body">
           <MDXRenderer>

@@ -54,11 +54,11 @@ body {
         prose-figcaption:font-semibold
         prose-figcaption:text-gray-500
         prose-img:my-0
-        prose-pre:px-8 sm:prose-pre:px-6
+        prose-pre:px-8 sm:prose-pre:!p-6
         prose-pre:!bg-gray-50 dark:prose-pre:!bg-gray-800
         prose-pre:!text-gray-800 dark:prose-pre:!text-gray-100
         prose-pre:!rounded-lg
-        prose-pre:!leading-[1.35]
+        prose-pre:!leading-normal
         prose-code:before:content-['']
         prose-code:after:content-['']
     ;
