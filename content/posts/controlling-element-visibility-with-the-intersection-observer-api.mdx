@@ -8,6 +8,10 @@ description: >-
 tags:
   - javascript
 ---
+import Figure from "../../src/components/figure";
+import RootMargin from "../../static/assets/root-margin.svg";
+import Thresholds from "../../static/assets/thresholds.svg";
+
 Controlling the display of elements based on their visibility within the browser viewport has typically been a rather messy affair, involving calculations using window height and `getBoundingClientRect()`. There is now a new API called Intersection Observer that makes this much simpler. It is now [supported](https://caniuse.com/#feat=intersectionobserver) in Chrome, Firefox, Opera and Edge.
 
 ## The HTML and CSS
@@ -37,10 +41,9 @@ I have a simple grid of cards that is styled using CSS grid:
 
 I loop over each card and create an observer. The observer accepts a callback and an options object. Note that in `options` I am setting the `rootMargin` to a negative value. This insets the intersection point in from the viewport on all sides by 100px. So a card can be up to 100px in the viewport before the observer will read it as intersected.
 
-<figure>
-  <img src="../../assets/root-margin.png" alt=""/>
-  <figcaption>The root margin grows or shrinks from each side of the root element’s bounding box before computing intersections.</figcaption>
-</figure>
+<Figure caption="The root margin grows or shrinks from each side of the root element’s bounding box before computing intersections.">
+  <RootMargin />
+</Figure>
 
 I have also set the `threshold` option as an array with two numeric values. These are the percentages of intersection at which the observer will respond. So, when a card is 50% and 100% in the viewport, the observer will execute the callback.
 
@@ -62,10 +65,12 @@ targets.forEach(target => observer.observe(target));
 
 The callback function gives me an array of entries, in which each entry represents an intersection change. I can check the `intersectionRatio` on each entry and apply some styling appropriately.
 
-<figure>
-  <img src="../../assets/thresholds.png" alt=""/>
-  <figcaption>Thresholds indicate at what percentage of the target’s visibility the observer’s callback should be executed.</figcaption>
-</figure>
+<Figure
+  wide={true}
+  caption="Thresholds indicate at what percentage of the target’s visibility the observer’s callback should be executed."
+>
+  <Thresholds />
+</Figure>
 
 ```javascript
 const callback = entries => {

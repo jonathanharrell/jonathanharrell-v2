@@ -9,16 +9,19 @@ tags:
   - css
   - theming
 ---
+import Figure from "../../src/components/figure";
+import LiveThemingDemo from "../../src/demos/live-theming";
+
 CSS variables, now enjoying fairly good [browser support](https://caniuse.com/#search=css%20variables), are opening up exciting possibilities for more dynamic styling. Having true CSS variables means that we can get and set their values using JavaScript, allowing us to build exciting features like live theming.
 
 The process is fairly simple—set up initial variable values in CSS, mark up some inputs, add event listeners and set the values in JavaScript. Let’s get started!
 
-<figure className="lg:-ml-24 lg:-mr-24">
-  <img src="../../assets/live-theming.png" alt=""/>
-  <figcaption className="lg:ml-24 lg:mr-24">
-    An editor for customizing the colors and typography of a layout, built with simple JavaScript and CSS variables.
-  </figcaption>
-</figure>
+<Figure
+  wide={true}
+  caption="An editor for customizing the colors and typography of a layout, built with simple JavaScript and CSS variables."
+>
+  <LiveThemingDemo />
+</Figure>
 
 ## Set Up Initial Values
 

@@ -43,6 +43,7 @@ module.exports = {
                       '#F3F4F6': 'background',
                       '#101727': 'text',
                       '#D1D5DC': 'image',
+                      '#E5E7EB': 'placeholder',
                       'multiply': 'overlay-blend-mode'
                     }
 

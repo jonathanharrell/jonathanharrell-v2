@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="350px" viewBox="0 0 800 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>semantic-image-overlays</title>
+    <defs>
+        <polygon id="path-1" points="594.091195 127.264151 634.908805 65 634.908805 222.735849 594.091195 285"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="40.8176101" height="220" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="semantic-image-overlays" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F3F4F6" x="0" y="0" width="800" height="350"></rect>
+        <rect id="Rectangle" stroke="#374152" stroke-width="2" fill="#E5E7EB" transform="translate(220.000000, 175.000000) rotate(-360.000000) translate(-220.000000, -175.000000) " x="122" y="77" width="196" height="196"></rect>
+        <path d="M140,215 L185.86,169.14 C193.669997,161.332361 206.330003,161.332361 214.14,169.14 L260,215 M240,195 L255.86,179.14 C263.669997,171.332361 276.330003,171.332361 284.14,179.14 L300,195 M160,255 L280,255 C291.045695,255 300,246.045695 300,235 L300,115 C300,103.954305 291.045695,95 280,95 L160,95 C148.954305,95 140,103.954305 140,115 L140,235 C140,246.045695 148.954305,255 160,255 Z M140,215 L185.86,169.14 C193.669997,161.332361 206.330003,161.332361 214.14,169.14 L260,215 M240,195 L255.86,179.14 C263.669997,171.332361 276.330003,171.332361 284.14,179.14 L300,195 M160,255 L280,255 C291.045695,255 300,246.045695 300,235 L300,115 C300,103.954305 291.045695,95 280,95 L160,95 C148.954305,95 140,103.954305 140,115 L140,235 C140,246.045695 148.954305,255 160,255 Z" id="Shape" stroke="#374152" stroke-width="3" opacity="0.25" stroke-linecap="round" stroke-linejoin="round"></path>
+        <g id="Group-4" transform="translate(172.000000, 164.000000)" fill="#374152">
+            <rect id="Rectangle" x="0" y="0" width="96" height="6"></rect>
+            <rect id="Rectangle" x="15.1578947" y="17" width="65.6842105" height="6"></rect>
+        </g>
+        <path d="M454.908805,68.3494077 L454.908805,222.437289 L416.091195,281.650592 L416.091195,127.562711 L454.908805,68.3494077 Z" id="Rectangle-Copy-4" stroke="#374152" stroke-width="2" fill="#F3F4F6" transform="translate(435.500000, 175.000000) rotate(-360.000000) translate(-435.500000, -175.000000) "></path>
+        <g id="grid-line-label-copy-5" transform="translate(375.000000, 86.351852)" fill="#E96D00" font-family="SFMono-Medium, SF Mono" font-size="12" font-weight="400">
+            <text id="1">
+                <tspan x="0.037109375" y="11">article</tspan>
+            </text>
+        </g>
+        <g id="grid-line-label-copy-6" transform="translate(479.000000, 86.597701)" fill="#E96D00" font-family="SFMono-Medium, SF Mono" font-size="12" font-weight="400">
+            <text id="1">
+                <tspan x="0.455078125" y="11">image</tspan>
+            </text>
+        </g>
+        <g id="grid-line-label-copy-7" transform="translate(577.000000, 86.708333)" fill="#E96D00" font-family="SFMono-Medium, SF Mono" font-size="12" font-weight="400">
+            <text id="1">
+                <tspan x="0.1640625" y="11">text</tspan>
+            </text>
+        </g>
+        <line x1="439" y1="175" x2="527" y2="175" id="Line-4" stroke="#E96D00" stroke-width="2" stroke-linecap="square"></line>
+        <polygon id="Rectangle-Copy-4" fill="#E5E7EB" transform="translate(526.408805, 175.000000) rotate(-360.000000) translate(-526.408805, -175.000000) " points="506 127.264151 546.81761 65 546.81761 222.735849 506 285"></polygon>
+        <line x1="531" y1="175" x2="620" y2="175" id="Line-4" stroke="#E96D00" stroke-width="2" stroke-linecap="square"></line>
+        <use id="Rectangle-Copy-4" stroke="#E96D00" mask="url(#mask-2)" stroke-width="2" fill="#F3F4F6" stroke-dasharray="2" transform="translate(614.500000, 175.000000) rotate(-360.000000) translate(-614.500000, -175.000000) " xlink:href="#path-1"></use>
+        <polygon id="Rectangle-Copy-4" fill="#374152" transform="translate(615.500000, 161.000000) rotate(-360.000000) translate(-615.500000, -161.000000) " points="605 173.119013 626 141.085114 626 148.880987 605 180.914886"></polygon>
+        <polygon id="Rectangle-Copy-4" fill="#374152" transform="translate(615.500000, 179.000000) rotate(-360.000000) translate(-615.500000, -179.000000) " points="605 191.119013 626 159.085114 626 166.880987 605 198.914886"></polygon>
+        <path id="Line-4" d="M678.368686,166.888163 L679.240261,167.378424 L691.240261,174.128424 L692.789729,175 L691.240261,175.871576 L679.240261,182.621576 L678.368686,183.111837 L677.388163,181.368686 L678.259739,180.878424 L686.932,176 L619,176 L619,174 L686.932,174 L678.259739,169.121576 L677.388163,168.631314 L678.368686,166.888163 Z" fill="#E96D00" fill-rule="nonzero"></path>
+    </g>
+</svg>

@@ -9,12 +9,14 @@ tags:
   - css
   - images
 ---
+import Figure from "../../src/components/figure";
+import SemanticImageOverlays from "../../static/assets/semantic-image-overlays.svg";
+
 Think of how many times you have coded a grid of images with an overlay that appears on hover and displays some sort of text. With the `object-fit` property getting wider support, there is now a clean, semantic way to do this.
 
-<figure>
-  <img src="../../assets/semantic-image-overlays.png" alt=""/>
-  <figcaption>The article element contains two absolutely positioned children: an image and a div with text.</figcaption>
-</figure>
+<Figure caption="The article element contains two absolutely positioned children: an image and a div with text.">
+  <SemanticImageOverlays />
+</Figure>
 
 ## The Old Way (without object-fit)
 

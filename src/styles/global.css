@@ -8,6 +8,7 @@
   --diagram-background: #F3F4F6;
   --diagram-text: #111827;
   --diagram-image: #D1D5DC;
+  --diagram-placeholder: #E5E7EB;
   --diagram-overlay-blend-mode: multiply;
 }
 
@@ -16,6 +17,7 @@
     --diagram-background: #1F2937;
     --diagram-text: #E5E7EB;
     --diagram-image: #374151;
+    --diagram-placeholder: #4B5563;
     --diagram-overlay-blend-mode: screen;
   }
 }
@@ -53,6 +55,7 @@ body {
         prose-figcaption:!text-xs
         prose-figcaption:font-semibold
         prose-figcaption:text-gray-500
+        prose-figcaption:!leading-normal
         prose-img:my-0
         prose-pre:px-8 sm:prose-pre:!p-6
         prose-pre:!bg-gray-50 dark:prose-pre:!bg-gray-800

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="507px" viewBox="0 0 800 507" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>root-margin</title>
+    <defs>
+        <path d="M700,65 L700,442 L100,442 L100,65 L700,65 Z M670.238727,95 L130.238727,95 L130.238727,412 L670.238727,412 L670.238727,95 Z" id="path-1"></path>
+        <pattern id="pattern-2" width="4.2" height="4.2" x="95.8" y="60.8" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-3" transform="scale(0.35,0.35)"></use>
+        </pattern>
+        <image id="image-3" width="12" height="12" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAADKADAAQAAAABAAAADAAAAAATDPpdAAAAPElEQVQoFWNkIALcrOBoYPj/r56BkamRoHKQ4pvlbP/BmgipHlWMHEK0Cw2QLURHCkgtKMaJikGoYpDhAKsQRyg+NaFuAAAAAElFTkSuQmCC"></image>
+    </defs>
+    <g id="root-margin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F3F4F6" x="0" y="0" width="800" height="507"></rect>
+        <g id="Combined-Shape" opacity="0.25" style="mix-blend-mode: multiply;">
+            <use fill="url(#pattern-2)" xlink:href="#path-1"></use>
+            <use fill-opacity="0.25" fill="#E96D00" xlink:href="#path-1"></use>
+        </g>
+        <rect id="Rectangle" stroke="#E96D00" x="130.5" y="95.5" width="539" height="316"></rect>
+        <rect id="Rectangle" stroke="#101727" stroke-width="2" x="101" y="66" width="598" height="375"></rect>
+        <path id="Line-5" d="M665,96.0166667 L665,95.0166667 L669,95.016 L669,67.983 L665,67.9833333 L665,66.9833333 L674,66.9833333 L674,67.9833333 L670,67.983 L670,95.016 L674,95.0166667 L674,96.0166667 L665,96.0166667 Z" fill="#E96D00" fill-rule="nonzero"></path>
+        <path id="Line-5" d="M669.983333,100 L668.983333,100 L668.983333,91 L669.983333,91 L669.983,94.999 L697.016,94.999 L697.016667,91 L698.016667,91 L698.016667,100 L697.016667,100 L697.016,95.999 L669.983,95.999 L669.983333,100 Z" fill="#E96D00" fill-rule="nonzero"></path>
+        <text id="100px" font-family="IdealSans-Book, Ideal Sans" font-size="14" font-weight="normal" fill="#E96D00">
+            <tspan x="621" y="85">100px</tspan>
+        </text>
+    </g>
+</svg>
