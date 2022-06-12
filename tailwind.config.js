@@ -3,6 +3,7 @@ module.exports = {
     './src/**/*.{js,jsx}',
     './content/**/*.{md,mdx}'
   ],
+  darkMode: 'class',
   theme: {
     fontFamily: {
       sf: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],

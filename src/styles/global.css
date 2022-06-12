@@ -22,6 +22,14 @@
   }
 }
 
+*:focus {
+  outline: 0;
+}
+
+*:focus-visible {
+  outline: initial;
+}
+
 body {
     @apply
       bg-white dark:bg-gray-900
@@ -87,4 +95,8 @@ body {
       bg-gray-100 dark:bg-gray-800
       font-normal
       text-gray-800 dark:text-gray-100;
+}
+
+.select-item[aria-selected=true] {
+  @apply bg-gray-200 dark:bg-gray-700;
 }
