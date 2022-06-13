@@ -19,13 +19,18 @@ const themeOptions = {
   }
 }
 
-const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
 const ThemeSelect = () => {
   const [theme, setTheme] = React.useState(localStorage.theme || 'system');
-  const [systemTheme, setSystemTheme] = React.useState(darkThemeMediaQuery.matches ? 'dark' : 'light');
+  const [systemTheme, setSystemTheme] = React.useState(null);
 
   React.useEffect(() => {
+    const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setSystemTheme(darkThemeMediaQuery.matches ? 'dark' : 'light');
+  }, []);
+
+  React.useEffect(() => {
+    const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
     const handleThemeChange = event => {
       setSystemTheme(event.matches ? 'dark' : 'light');
 
