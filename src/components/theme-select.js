@@ -20,10 +20,12 @@ const themeOptions = {
 }
 
 const ThemeSelect = () => {
-  const [theme, setTheme] = React.useState(localStorage.theme || 'system');
+  const [theme, setTheme] = React.useState();
   const [systemTheme, setSystemTheme] = React.useState(null);
 
   React.useEffect(() => {
+    setTheme(localStorage.theme || 'system');
+
     const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     setSystemTheme(darkThemeMediaQuery.matches ? 'dark' : 'light');
   }, []);
@@ -72,7 +74,7 @@ const ThemeSelect = () => {
     }
   }, [theme, systemTheme]);
 
-  return (
+  return theme ? (
     <Select.Root value={theme} onValueChange={setTheme}>
       <Select.Trigger className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
         <Select.Value aria-label={theme}>
@@ -96,7 +98,7 @@ const ThemeSelect = () => {
         </Select.Viewport>
       </Select.Content>
     </Select.Root>
-  );
+  ) : null;
 }
 
 export default ThemeSelect;
