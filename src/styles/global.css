@@ -12,14 +12,12 @@
   --diagram-overlay-blend-mode: multiply;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --diagram-background: #1F2937;
-    --diagram-text: #E5E7EB;
-    --diagram-image: #374151;
-    --diagram-placeholder: #4B5563;
-    --diagram-overlay-blend-mode: screen;
-  }
+:root .dark {
+  --diagram-background: #1F2937;
+  --diagram-text: #E5E7EB;
+  --diagram-image: #374151;
+  --diagram-placeholder: #4B5563;
+  --diagram-overlay-blend-mode: screen;
 }
 
 *:focus {
