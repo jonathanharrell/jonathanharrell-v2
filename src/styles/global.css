@@ -12,7 +12,7 @@
   --diagram-overlay-blend-mode: multiply;
 }
 
-:root .dark {
+.dark {
   --diagram-background: #1F2937;
   --diagram-text: #E5E7EB;
   --diagram-image: #374151;
