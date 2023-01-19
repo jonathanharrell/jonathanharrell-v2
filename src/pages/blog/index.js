@@ -1,40 +1,59 @@
 import React from 'react';
 import {graphql, Link} from "gatsby";
 import Layout from "../../components/layout";
-import {formatDate} from "../../helpers";
 
 const Blog = ({data: {allMdx}}) => {
   const posts = allMdx.edges;
 
   return (
-    <Layout className="bg-gray-100 dark:bg-gray-900">
+    <Layout>
       <div className="xl:max-w-4xl mx-auto">
         <div>
-          <h1 className="mb-12 text-sm sm:text-2xl font-semibold">
+          <h1 className="mb-8 text-sm sm:text-3xl font-semibold">
             Articles
           </h1>
-          <div className="grid md:grid-cols-12 gap-6 md:gap-8">
-            {posts.map(post => {
-              const formattedDate = formatDate(post.node.frontmatter.date);
-
-              return (
-                <Link
-                  key={post.node.id}
-                  to={`/blog/${post.node.slug}`}
-                  className="block col-span-6 p-8 rounded-lg bg-white dark:bg-gray-800"
-                >
-                  <p className="mb-3 text-sm font-medium text-gray-500 dark:text-gray-400">
-                    {formattedDate}
-                  </p>
-                  <h2 className="text-xl lg:text-3xl leading-tight font-bold tracking-tight">
-                    {post.node.frontmatter.title}
-                  </h2>
-                  <p className="mt-4 tracking-normal text-gray-600 dark:text-gray-400">
-                    {post.node.frontmatter.description}
-                  </p>
-                </Link>
-              )
-            })}
+          <div className="grid grid-cols-12 gap-x-24">
+            <div className="col-start-1 col-end-9">
+              {posts.map(post => {
+                return (
+                  <Link
+                    key={post.node.id}
+                    to={`/blog/${post.node.slug}`}
+                    className="flex flex-col gap-4 py-8 border-b border-gray-200 dark:border-gray-700"
+                  >
+                    <h2 className="text-xl lg:text-2xl leading-tight font-bold">
+                      {post.node.frontmatter.title}
+                    </h2>
+                    <p className="text-xl leading-normal">
+                      {post.node.frontmatter.description}
+                    </p>
+                    <p>
+                      <a href="" className="font-idealSans font-bold dark:text-gray-500">
+                        Read more
+                      </a>
+                    </p>
+                  </Link>
+                )
+              })}
+            </div>
+            <div className="col-start-10 col-end-13">
+              <h2>Categories</h2>
+              <ul>
+                <li>section 1</li>
+                <li>section 2</li>
+                <li>section 3</li>
+                <li>section 4</li>
+                <li>section 5</li>
+              </ul>
+              <h2>Tags</h2>
+              <ul>
+                <li>section 1</li>
+                <li>section 2</li>
+                <li>section 3</li>
+                <li>section 4</li>
+                <li>section 5</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

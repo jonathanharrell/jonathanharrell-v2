@@ -18,16 +18,19 @@ Think of how many times you have coded a grid of images with an overlay that app
   <SemanticImageOverlays />
 </Figure>
 
-## The Old Way (without object-fit)
+## Without object-fit
 
 Here’s how I used to accomplish this:
 
 ```html
 <article class="blog-post-teaser">
-  <div class="image" style="background-image: url(...)"></div>
+  <div
+    class="image"
+    style="background-image: url('/img.jpg')"
+  ></div>
   <div class="overlay">
     <h3>
-      <a href="...">Article Title</a>
+      <a href="/post-url">Article Title</a>
     </h3>
   </div>
 </article>
@@ -62,16 +65,20 @@ The key downside with this approach is that it's not as semantic as it could be.
 
 How do we improve semantics while retaining control of the image sizing? Enter `object-fit`.
 
-## The New Way (with object-fit)
+## With object-fit
+
+<aside>
+  <p><a href="https://www.w3.org/TR/css-images-3/#the-object-fit" target="_blank" aria-label="Learn more about the object-fit property">Learn more</a> about the <code>object-fit</code> property</p>
+</aside>
 
 Here’s what my markup looks like now:
 
 ```html
 <article class="blog-post-teaser">
-  <img src="..." alt="...">
+  <img src="/img.jpg" alt="Image description">
   <div class="overlay">
     <h3>
-      <a href="...">Article Title</a>
+      <a href="/post-url">Article Title</a>
     </h3>
   </div>
 </article>
@@ -103,8 +110,8 @@ Now the browser knows we’re serving up an image. Search engines can properly a
 }
 ```
 
+<aside>
+  <p>Check out the <a href="https://caniuse.com/object-fit" target="_blank" aria-label="Check out the browser support for object-fit">browser support</a> for <code>object-fit</code></p>
+</aside>
+
 It’s almost identical, only that now we’re using the `img` element and applying the `object-fit` property. This works the exact same way as setting `background-size: cover`. The image will fill the specified space.
-
-## Browser Support of object-fit
-
-Currently `object-fit` is not supported in IE or Edge, but there is a [simple polyfill](https://medium.com/@primozcigler/neat-trick-for-css-object-fit-fallback-on-edge-and-other-browsers-afbc53bbb2c3) you can use to convert the image to a background-image in those browsers.

@@ -5,7 +5,7 @@
 :root {
   color-scheme: light dark;
 
-  --diagram-background: #F3F4F6;
+  --diagram-background: white;
   --diagram-text: #111827;
   --diagram-image: #D1D5DC;
   --diagram-placeholder: #E5E7EB;
@@ -13,7 +13,7 @@
 }
 
 .dark {
-  --diagram-background: #1F2937;
+  --diagram-background: #111827;
   --diagram-text: #E5E7EB;
   --diagram-image: #374151;
   --diagram-placeholder: #4B5563;
@@ -31,8 +31,9 @@
 body {
     @apply
       bg-white dark:bg-gray-900
-      font-sf
-      text-gray-800 dark:text-gray-100;
+      font-mercury
+      text-gray-800 dark:text-gray-100
+      selection:bg-gray-200 dark:selection:bg-gray-700;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -40,33 +41,35 @@ body {
 
 .article-body {
     @apply
-        prose lg:prose-lg
-        max-w-[58ch]
-        mx-auto
-        text-gray-800 dark:text-gray-100
+        text-base sm:text-lg md:text-xl
+        !max-w-full
+        text-gray-800 dark:text-gray-200
         prose-headings:relative
-        prose-headings:tracking-tight
         prose-headings:text-gray-800 dark:prose-headings:text-gray-100
-        prose-h2:!mb-4
-        prose-h2:!text-2xl
-        prose-p:leading-normal
+        prose-h2:!mt-8
+        prose-h2:!mb-2
+        prose-h2:!text-lg
+        prose-h2:uppercase
+        prose-h2:tracking-wide
+        prose-h2:font-bold
+        prose-h3:!mt-6
+        prose-h3:font-bold
+        !leading-normal
         prose-strong:text-inherit
         prose-a:font-normal
-        prose-a:text-orange-500
-        prose-a:no-underline
-        hover:prose-a:underline
+        prose-a:underline
+        prose-a:decoration-orange-300
         prose-a:underline-offset-[2px]
-        prose-figure:!my-8
-        md:prose-figure:!my-12
-        prose-figcaption:!text-xs
+        hover:prose-a:bg-orange-100
         prose-figcaption:font-semibold
         prose-figcaption:text-gray-500
         prose-figcaption:!leading-normal
         prose-img:my-0
-        prose-pre:px-8 sm:prose-pre:!p-6
-        prose-pre:!bg-gray-50 dark:prose-pre:!bg-gray-800
+        prose-pre:py-8 sm:prose-pre:!p-6
+        prose-pre:border-t prose-pre:border-b prose-pre:border-gray-200 dark:prose-pre:border-gray-700
+        prose-pre:bg-gray-50 dark:prose-pre:bg-gray-800
+        prose-pre:text-[17.5px]
         prose-pre:!text-gray-800 dark:prose-pre:!text-gray-100
-        prose-pre:!rounded-lg
         prose-pre:!leading-normal
         prose-code:before:content-['']
         prose-code:after:content-['']
@@ -75,26 +78,63 @@ body {
     font-feature-settings: "liga" 1;
 }
 
-.article-body > figure img,
-.article-body > figure svg {
-    @apply w-full rounded-lg;
+.article-body > * {
+  @apply col-start-1 col-end-13 lg:col-start-5 xl:col-start-4 xl:col-end-10;
 }
 
-.article-body h2 + figure,
-.article-body h3 + figure {
-  @apply !mt-4;
+.article-body > p {
+  @apply my-3;
+}
+
+.article-body > aside {
+  @apply relative my-3 font-idealSans col-start-1 col-end-13 lg:col-end-5 xl:col-end-4 lg:text-right text-lg text-gray-500 dark:text-gray-400;
+}
+
+.article-body > aside code {
+  @apply !text-gray-500 dark:!text-gray-400;
+}
+
+.article-body > aside p {
+  @apply lg:absolute lg:right-0 lg:max-w-[24ch];
+}
+
+.article-body > figure {
+  @apply my-6;
+}
+
+.article-body > figure img,
+.article-body > figure svg {
+    @apply w-full border border-gray-200 dark:border-gray-700;
+}
+
+.article-body > figure figcaption {
+  @apply font-idealSans !text-base text-gray-500 dark:text-gray-400 font-normal mt-3;
+}
+
+.article-body > pre {
+ @apply my-3 overflow-auto;
 }
 
 .article-body p code {
     @apply
-      py-0.5
-      px-1
-      rounded-sm
-      bg-gray-100 dark:bg-gray-800
+      px-0.5
       font-normal
+      text-lg
       text-gray-800 dark:text-gray-100;
+}
+
+.article-body ul {
+  @apply list-disc;
 }
 
 .select-item[aria-selected=true] {
   @apply bg-gray-200 dark:bg-gray-700;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  @apply p-0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  @apply rounded-none border-0;
 }

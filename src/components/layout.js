@@ -14,12 +14,12 @@ const components = {
 
     return (
       <h2 id={id} className="relative group scroll-mt-8">
-        <div className="not-prose hidden sm:block flex items-center absolute top-0 lg:top-0.5 -left-10 pr-2 h-full opacity-0 group-hover:opacity-100 transition-all">
+        <div className="not-prose hidden sm:block flex items-center absolute top-0 lg:top-0.5 -left-6 pr-2 h-full opacity-0 group-hover:opacity-100 transition-all">
           <a
             href={`#${id}`}
             title="Copy link to this section"
             aria-hidden="true"
-            className="block p-1.5 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+            className="block py-1.5"
             onClick={copyLink}
           >
             <LinkIcon width="0.75em" height="0.75em"/>

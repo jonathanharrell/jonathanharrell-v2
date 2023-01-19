@@ -77,7 +77,9 @@ class AccordionItem extends React.Component {
     super(props)
 
     this.toggleExpansion = () => {
-      this.setState({ expanded: !this.state.expanded });
+      this.setState({
+        expanded: !this.state.expanded
+      });
     }
 
     this.state = {
@@ -88,7 +90,9 @@ class AccordionItem extends React.Component {
 
   render() {
     return (
-      <AccordionItemContext.Provider value={this.state}>
+      <AccordionItemContext.Provider
+        value={this.state}
+      >
         <div className="accordion-item">
           {this.props.children}
         </div>
@@ -199,7 +203,9 @@ Vue.component('accordion-header', {
 
   template: `
     <h2 class="accordion-header">
-      <button @click="accordionItemState.expanded = !accordionItemState.expanded">
+      <button
+        @click="accordionItemState.expanded = !accordionItemState.expanded"
+      >
         {{ accordionItemState.expanded ? '→' : '→' }}
         <slot></slot>
       </button>
@@ -217,7 +223,9 @@ Vue.component('accordion-panel', {
   template: `
     <div
       class="accordion-panel"
-      :class="{ expanded: accordionItemState.expanded }"
+      :class="{
+        expanded: accordionItemState.expanded
+      }"
     >
       <slot></slot>
     </div>
