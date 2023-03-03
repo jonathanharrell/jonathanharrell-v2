@@ -10,108 +10,166 @@ tags:
   - images
 ---
 import Figure from "../../src/components/figure";
-import SemanticImageOverlays from "../../static/assets/semantic-image-overlays.svg";
+import Sandpack from "../../src/components/sandpack";
+import SemanticImageOverlaysDemo from "../../src/demos/semantic-image-overlays";
 
 Think of how many times you have coded a grid of images with an overlay that appears on hover and displays some sort of text. With the `object-fit` property getting wider support, there is now a clean, semantic way to do this.
 
 <Figure caption="The article element contains two absolutely positioned children: an image and a div with text.">
-  <SemanticImageOverlays />
+  <SemanticImageOverlaysDemo />
 </Figure>
 
 ## Without object-fit
 
 Here’s how I used to accomplish this:
 
-```html
-<article class="blog-post-teaser">
-  <div
-    class="image"
-    style="background-image: url('/img.jpg')"
-  ></div>
-  <div class="overlay">
-    <h3>
-      <a href="/post-url">Article Title</a>
-    </h3>
-  </div>
-</article>
-```
-
-The markup involved an `article` containing a `div` with a background image applied, and an overlay `div` that contained the text that needed to sit on top of the image. I would then absolutely position both the image and the overlay. The size of the `div` would be determined by a percentage padding trick on the article:
-
-```css
+<Sandpack
+  template="react"
+  previewStyle={{ height: '264px' }}
+  files={{
+    '/App.js': `
+import React from 'react';
+\n\
+export default function App() {
+  return (
+    <article className="blog-post-teaser">
+      <div
+        className="image"
+        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1554629947-334ff61d85dc?auto=format&fit=crop&w=1024&h=1280&q=80")' }}
+      />
+      <div className="overlay">
+        <a href="/">
+          <h3>Article Title</h3>
+        </a>
+      </div>
+    </article>
+  );
+}`,
+    '/styles.css': `
 .blog-post-teaser {
   position: relative;
-  padding: 30% 0;
+  width: 300px;
+  height: 200px;
+  margin: 32px auto;
+  border-radius: 8px;
+  overflow: hidden;
 }
-
+\n\
 .blog-post-teaser .image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
 }
-
+\n\
 .blog-post-teaser .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  background-color: #f97316;
+  mix-blend-mode: hard-light;
 }
-```
+\n\
+.blog-post-teaser .overlay a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  text-decoration: none;
+  color: white;
+}
+\n\
+.blog-post-teaser .overlay h3 {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+`
+  }}
+/>
+
+The markup involved an `article` containing a `div` with a background image applied, and an overlay `div` that contained the text that needed to sit on top of the image. I would then absolutely position both the image and the overlay. The size of the `div` would be determined by a percentage padding trick on the article:
 
 The key downside with this approach is that it's not as semantic as it could be. The image for each article seems like a pretty important piece of content, and the browser doesn’t know that it’s an image. And we can’t feed in `alt` tags to help with SEO.
 
 How do we improve semantics while retaining control of the image sizing? Enter `object-fit`.
 
-## With object-fit
+---
 
-<aside>
-  <p><a href="https://www.w3.org/TR/css-images-3/#the-object-fit" target="_blank" aria-label="Learn more about the object-fit property">Learn more</a> about the <code>object-fit</code> property</p>
-</aside>
+## With object-fit
 
 Here’s what my markup looks like now:
 
-```html
-<article class="blog-post-teaser">
-  <img src="/img.jpg" alt="Image description">
-  <div class="overlay">
-    <h3>
-      <a href="/post-url">Article Title</a>
-    </h3>
-  </div>
-</article>
-```
-
-Now the browser knows we’re serving up an image. Search engines can properly access alternative text. Let’s look at the styling:
-
-```css
+<Sandpack
+  template="react"
+  previewStyle={{ height: '264px' }}
+  files={{
+    '/App.js': `
+import React from 'react';
+\n\
+export default function App() {
+  return (
+    <article className="blog-post-teaser">
+      <img
+        src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?auto=format&fit=crop&w=1024&h=1280&q=80"
+        alt="Image description"
+      />
+      <div className="overlay">
+        <a href="/">
+          <h3>Article Title</h3>
+        </a>
+      </div>
+    </article>
+  );
+}`,
+    '/styles.css': `
 .blog-post-teaser {
   position: relative;
-  padding: 30% 0;
+  width: 300px;
+  height: 200px;
+  margin: 32px auto;
+  border-radius: 8px;
+  overflow: hidden;
 }
-
+\n\
 .blog-post-teaser img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
+\n\
 .blog-post-teaser .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  background-color: #f97316;
+  mix-blend-mode: hard-light;
 }
-```
-
-<aside>
-  <p>Check out the <a href="https://caniuse.com/object-fit" target="_blank" aria-label="Check out the browser support for object-fit">browser support</a> for <code>object-fit</code></p>
-</aside>
+\n\
+.blog-post-teaser .overlay a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  text-decoration: none;
+  color: white;
+}
+\n\
+.blog-post-teaser .overlay h3 {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+`
+  }}
+/>
 
 It’s almost identical, only that now we’re using the `img` element and applying the `object-fit` property. This works the exact same way as setting `background-size: cover`. The image will fill the specified space.
+
+Now the browser knows we’re serving up an image. Search engines can properly access alternative text.
+
+---
+
+## Further Reading
+
+links here

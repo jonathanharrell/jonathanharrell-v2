@@ -12,6 +12,8 @@ tags:
 ---
 HTML form inputs have been notoriously difficult to style with CSS, but there are several selectors that give us significant power to style inputs and surrounding elements. Some of these are relatively new, while others have been available for years.
 
+import Sandpack from "../../src/components/sandpack";
+
 ## :placeholder-shown
 
 <figure>
@@ -58,17 +60,16 @@ input:placeholder-shown + label {
 
 ## :required
 
-<figure>
-  <img src="../../assets/required.png" alt=""/>
-  <figcaption>Required inputs can be styled to show a required message beneath them</figcaption>
-</figure>
-
-Use this selector to indicate that an input has the `required` attribute. Here I am using an empty `.help-text` paragraph and placing some content dynamically using the `::before` pseudo-element. Realistically, this would be done with JavaScript, but I am including it here to demonstrate a pure CSS approach.
+<div className="not-prose flex flex-col justify-center py-14 px-16 bg-neutral-50 dark:bg-neutral-800">
+  <label for="required-input" className="mb-2 font-semibold dark:text-neutral-400">Input label</label>
+  <input type="text" id="required-input" required value="Input value" className="py-2 px-4 border dark:border-neutral-600 required:border-red-500 required:dark:border-red-800 rounded-lg bg-neutral-100 dark:bg-neutral-700 shadow" />
+  <p className="help-text" className="mt-2 text-sm font-semibold text-red-500 dark:text-red-700">This input is required</p>
+</div>
 
 ```html
 <label for="required-input">Input label</label>
-<input type="text" id="required-input" required>
-<p class="help-text"></p>
+<input type="text" id="required-input" required />
+<p class="help-text"/>
 ```
 
 ```css
@@ -77,127 +78,533 @@ input:required + .help-text::before {
 }
 ```
 
+<Sandpack
+  template="react"
+  previewStyle={{ height: '220px' }}
+  files={{
+    '/App.js': `
+import React from 'react';
+\n\
+export default function App() {
+  return (
+    <div className="input-wrapper">
+      <label htmlFor="required-input">Input label</label>
+      <input type="text" id="required-input" value="Input value" required />
+      <p className="help-text"/>
+    </div>
+  );
+}`,
+    '/base.css': {
+      code: `
+@import '/variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
+\n\
+* {
+  box-sizing: border-box;
+}
+\n\
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+\n\
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+\n\
+label {
+  font-weight: 600;
+}
+\n\
+input {
+  display: block;
+  width: 500px;
+  max-width: 100%;
+  height: 2.8rem;
+  padding: 0 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  outline: 0;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  font-size: 1rem;
+}
+`,
+      hidden: true
+    },
+    '/styles.css': `
+@import '/base.css';
+\n\
+input:required {
+  border: 1px solid #dc2626;
+}
+\n\
+input:required + .help-text::before {
+  content: 'This input is required';
+}
+\n\
+.help-text {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #dc2626;
+}
+`
+  }}
+/>
+
+Use this selector to indicate that an input has the `required` attribute. Here I am using an empty `.help-text` paragraph and placing some content dynamically using the `::before` pseudo-element. Realistically, this would be done with JavaScript, but I am including it here to demonstrate a pure CSS approach.
+
 ## :optional
 
-<figure>
-  <img src="../../assets/optional.png" alt=""/>
-</figure>
+<Sandpack
+  template="react"
+  previewStyle={{ height: '220px' }}
+  files={{
+    '/App.js': `
+import React from 'react';
+\n\
+export default function App() {
+  return (
+    <div className="input-wrapper">
+      <label for="optional-input">Input label</label>
+      <input type="text" id="optional-input" />
+      <p className="help-text"/>
+    </div>
+  );
+}`,
+    '/styles.css': `
+* {
+  box-sizing: border-box;
+}
+\n\
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  background-color: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+}
+\n\
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+\n\
+label {
+  font-weight: 600;
+}
+\n\
+input {
+  display: block;
+  width: 500px;
+  max-width: 100%;
+  height: 2.8rem;
+  padding: 0 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  outline: 0;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  font-size: 1rem;
+}
+\n\
+input:optional {
+  border: 1px solid #d1d5db;
+}
+\n\
+input:optional + .help-text::before {
+  content: 'This input is optional';
+}
+\n\
+.help-text {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9ca3af;
+}
+`
+  }}
+/>
 
 This selector does the opposite of `:required`. I am again using an empty `.help-text` paragraph to display some optional text if the `required` attribute is *not* present.
 
-```css
-input:optional + .help-text::before {
-  content: 'optional';
-}
-```
-
 ## :disabled
 
-<figure>
-  <img src="../../assets/disabled.png" alt=""/>
-</figure>
+<Sandpack
+  template="react"
+  previewStyle={{ height: '220px' }}
+  files={{
+    '/App.js': `
+import React from 'react';
+\n\
+export default function App() {
+  return (
+    <div className="input-wrapper">
+      <label for="disabled-input">Input label</label>
+      <input type="text" id="disabled-input" disabled />
+    </div>
+  );
+}`,
+    '/styles.css': `
+* {
+  box-sizing: border-box;
+}
+\n\
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  background-color: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+}
+\n\
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+\n\
+label {
+  font-weight: 600;
+}
+\n\
+input {
+  display: block;
+  width: 500px;
+  max-width: 100%;
+  height: 2.8rem;
+  padding: 0 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  outline: 0;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  font-size: 1rem;
+}
+\n\
+input:disabled {
+  background-color: #f1f5f9;
+  border-color: #d1d5db;
+  cursor: not-allowed;
+}
+`
+  }}
+/>
 
 This one should be familiar to most of you, but still important to remember. It’s pretty essential to display whether or not an input is disabled for a user.
 
-```html
-<label for="disabled-input">Input label</label>
-<input type="text" id="disabled-input" disabled>
-```
-
-```css
-input:disabled {
-  background-color: var(--gray-lighter);
-  color: var(--gray-light);
-}
-```
-
 ## :enabled
 
-<figure>
-  <img src="../../assets/enabled.png" alt=""/>
-</figure>
+<Sandpack
+  template="react"
+  previewStyle={{ height: '220px' }}
+  files={{
+    '/App.js': `
+import React from 'react';
+\n\
+export default function App() {
+  return (
+    <div className="input-wrapper">
+      <label for="enabled-input">Input label</label>
+      <input type="text" id="enabled-input" />
+    </div>
+  );
+}`,
+    '/styles.css': `
+* {
+  box-sizing: border-box;
+}
+\n\
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  background-color: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+}
+\n\
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+\n\
+label {
+  font-weight: 600;
+}
+\n\
+input {
+  display: block;
+  width: 500px;
+  max-width: 100%;
+  height: 2.8rem;
+  padding: 0 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  outline: 0;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  font-size: 1rem;
+}
+\n\
+input:enabled {
+  border-color: #d1d5db;
+}
+`
+  }}
+/>
 
 This is counterpart to the `:disabled` selector. It will match any inputs without the `disabled` attribute.
 
-```css
-input:enabled {
-  background-color: var(--gray-light);
-  color: var(--gray-dark);
-}
-```
-
 ## :read-only
 
-<figure>
-  <img src="../../assets/read-only.png" alt=""/>
-</figure>
+<Sandpack
+  template="react"
+  previewStyle={{ height: '220px' }}
+  files={{
+    '/App.js': `
+import React from 'react';
+\n\
+export default function App() {
+  return (
+    <div className="input-wrapper">
+      <label for="read-only-input">Input label</label>
+      <input type="text" id="read-only-input" value="Read-only value" readOnly />
+    </div>
+  );
+}`,
+    '/styles.css': `
+* {
+  box-sizing: border-box;
+}
+\n\
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  background-color: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+}
+\n\
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+\n\
+label {
+  font-weight: 600;
+}
+\n\
+input {
+  display: block;
+  width: 500px;
+  max-width: 100%;
+  height: 2.8rem;
+  padding: 0 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  outline: 0;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  font-size: 1rem;
+}
+\n\
+input:read-only {
+  background-color: #f1f5f9;
+  border-color: #d1d5db;
+  cursor: not-allowed;
+  color: #94a3b8;
+}
+`
+  }}
+/>
 
 An input with the `readonly` attribute has a slightly different meaning than a disabled input. Such inputs are technically enabled, but their values cannot be altered by the user. Thankfully we have a selector to help with that.
 
-```html
-<label for="read-only-input">Input label</label>
-<input
-  type="text"
-  id="read-only-input"
-  value="Read-only value"
-  readonly
->
-```
-
-```css
-input:read-only {
-  border-color: var(--gray-light);
-  color: var(--gray);
-  cursor: not-allowed;
-}
-```
-
 ## :read-write
 
-<figure>
-  <img src="../../assets/read-write.png" alt=""/>
-</figure>
+<Sandpack
+  template="react"
+  previewStyle={{ height: '220px' }}
+  files={{
+    '/App.js': `
+import React from 'react';
+\n\
+export default function App() {
+  return (
+    <div className="input-wrapper">
+      <label for="read-write-input">Input label</label>
+      <input type="text" id="read-write-input" value="Writable value" />
+    </div>
+  );
+}`,
+    '/styles.css': `
+* {
+  box-sizing: border-box;
+}
+\n\
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  background-color: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+}
+\n\
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+\n\
+label {
+  font-weight: 600;
+}
+\n\
+input {
+  display: block;
+  width: 500px;
+  max-width: 100%;
+  height: 2.8rem;
+  padding: 0 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  outline: 0;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  font-size: 1rem;
+}
+\n\
+input:read-write {
+  border-color: #d1d5db;
+}
+`
+  }}
+/>
 
 This is the counterpart to the `:read-only` selector. It will match any inputs without the `readonly` attribute.
 
-```css
-input:read-write {
-  background-color: var(--gray-light);
-  color: var(--gray-dark);
-}
-```
-
 ## :invalid
+
+<Sandpack
+  template="react"
+  previewStyle={{ height: '220px' }}
+  files={{
+    '/App.js': `
+import React from 'react';
+\n\
+export default function App() {
+  return (
+    <div className="input-wrapper">
+      <label for="invalid-input">Input label</label>
+      <input type="email" id="invalid-input" value="notanemail" />
+      <p className="help-text"/>
+    </div>
+  );
+}`,
+    '/styles.css': `
+* {
+  box-sizing: border-box;
+}
+\n\
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  background-color: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+}
+\n\
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+\n\
+label {
+  font-weight: 600;
+}
+\n\
+input {
+  display: block;
+  width: 500px;
+  max-width: 100%;
+  height: 2.8rem;
+  padding: 0 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  outline: 0;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  font-size: 1rem;
+}
+\n\
+input:invalid {
+  border: 1px solid #dc2626;
+}
+\n\
+input:invalid + .help-text::before {
+  content: 'You must enter a valid email';
+}
+\n\
+.help-text {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #dc2626;
+}
+`
+  }}
+/>
 
 <figure>
   <img src="../../assets/invalid.png" alt=""/>
-  <figcaption>Invalid inputs can be styled to visually display an error state</figcaption>
 </figure>
 
 While much form validation will happen with JavaScript, we are able to take advantage of HTML form validation and style inputs accordingly. This selector checks if an input is currently *not* passing the native browser validation rules (for example, if an email input does not contain a real email).
 
-Here I am encoding an SVG to display an `x` in the input using the `background-image` property.
-
-```css
-input:invalid {
-  border-color: var(--color-error);
-  background-image: url("data:image/svg+xml,...");
-}
-```
-
-I can also customize some validation messages for each input type using the `.help-text` `span` and the `::before` pseudo-element.
-
-```html
-<label for="invalid-email">Input label</label>
-<input type="email" id="invalid-email" value="notanemail">
-<span class="help-text"></span>
-```
-
-```css
-input[type='email']:invalid + .help-text::before {
-  content: 'You must enter a valid email'
-}
-```
+I am encoding an SVG to display an `x` in the input using the `background-image` property. I can also customize some validation messages for each input type using the `.help-text` `span` and the `::before` pseudo-element.
 
 ## :user-invalid
 

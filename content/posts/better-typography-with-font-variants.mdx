@@ -23,6 +23,8 @@ This article is an overview of how to control OpenType features using CSS, but r
   <li><a href="#font-variant-alternates">font-variant-alternates</a></li>
 </ul>
 
+---
+
 ## The font-variant- Properties
 
 You can control most OpenType features using various properties beginning with `font-variant-`. There is also a low-level property `font-feature-settings` which can be used to support legacy browsers. Whenever possible, however, you should use the more modern `font-variant` properties. One solution is to use an `@supports` rule to check if a font-variant property is supported and otherwise use `font-feature-settings`.
@@ -39,6 +41,8 @@ body {
   }
 }
 ```
+
+---
 
 ## font-variant-ligatures
 
@@ -99,6 +103,8 @@ These are ligatures which could be considered a subset of discretionary, but are
 font-variant-ligatures: historical-ligatures;
 font-variant-ligatures: no-historical-ligatures;
 ```
+
+---
 
 ## font-variant-position
 
@@ -221,6 +227,8 @@ Standard uppercase letters are designed for use alongside lowercase letters and 
 font-variant-caps: titling-caps; /* enable */
 font-variant-caps: normal; /* disable all variants */
 ```
+
+---
 
 ## font-variant-numeric
 
@@ -347,6 +355,8 @@ This enables an alternate zero character with a slash through it.
 font-variant-numeric: slashed-zero; /* enable */
 font-variant-numeric: normal; /* disable all variants */
 ```
+
+---
 
 ## font-variant-alternates
 
@@ -487,7 +497,9 @@ font-feature-settings: nalt 1; /* low-level enable */
 font-feature-settings: nalt 0; /* low-level disable */
 ```
 
-## More Resources
+---
+
+## Further Reading
 
 There is a huge amount to learn about typography on the web including font variants and much more. Check out the following excellent resources for more information:
 

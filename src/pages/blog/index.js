@@ -7,7 +7,7 @@ const Blog = ({data: {allMdx}}) => {
 
   return (
     <Layout>
-      <div className="xl:max-w-4xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <div>
           <h1 className="mb-8 text-sm sm:text-3xl font-semibold">
             Articles
@@ -19,16 +19,16 @@ const Blog = ({data: {allMdx}}) => {
                   <Link
                     key={post.node.id}
                     to={`/blog/${post.node.slug}`}
-                    className="flex flex-col gap-4 py-8 border-b border-gray-200 dark:border-gray-700"
+                    className="flex flex-col py-6"
                   >
-                    <h2 className="text-xl lg:text-2xl leading-tight font-bold">
+                    <h2 className="text-lg tracking-tight font-bold">
                       {post.node.frontmatter.title}
                     </h2>
-                    <p className="text-xl leading-normal">
+                    <p className="leading-relaxed mt-2">
                       {post.node.frontmatter.description}
                     </p>
-                    <p>
-                      <a href="" className="font-idealSans font-bold dark:text-gray-500">
+                    <p className="mt-3">
+                      <a href="" className="text-sm font-medium dark:text-gray-500">
                         Read more
                       </a>
                     </p>

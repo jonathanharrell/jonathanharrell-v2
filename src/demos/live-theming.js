@@ -2,7 +2,7 @@ import React from 'react';
 
 const LiveTheming = () => {
   const [fontSize, setFontSize] = React.useState(14);
-  const [bgColor, setBgColor] = React.useState('#1f2937');
+  const [bgColor, setBgColor] = React.useState('#262626');
   const [textColor, setTextColor] = React.useState('#ffffff');
 
   const handleFontSizeChange = (event) => {

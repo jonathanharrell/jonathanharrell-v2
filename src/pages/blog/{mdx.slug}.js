@@ -9,25 +9,33 @@ export default function BlogPost({
   data: {mdx}
 }) {
   const {frontmatter, tableOfContents, body} = mdx;
-  const {date, title, description} = frontmatter;
+  const {date, title, description, tags} = frontmatter;
   const formattedDate = formatDate(date);
 
   return (
     <Layout>
-      <article className="grid grid-cols-12 xl:gap-x-24">
-        <div className="article-body grid grid-cols-12 xl:grid-cols-9 lg:gap-x-12 col-start-1 col-end-13 xl:col-end-10">
-          <header className="relative lg:col-start-1 lg:col-end-5 xl:col-end-4 lg:text-right border-t-4 border-black dark:border-white pt-2">
-            <h1 className="lg:!absolute w-full mb-4 lg:mb-0 text-3xl font-bold">
+      <article className="max-w-2xl mx-auto">
+        <header className="flex flex-col gap-4 mb-10">
+          <p className="text-sm font-semibold text-neutral-500">{formattedDate}</p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
               {title}
             </h1>
-          </header>
-          <MDXRenderer>
-              {body}
-          </MDXRenderer>
+          {tags.length > 0 && (
+            <ul className="flex flex-wrap gap-2">
+              {tags.map(tag => (
+                <li key={tag} className=" py-1.5 px-2 rounded-full bg-neutral-100 dark:bg-neutral-800 text-xs leading-none font-semibold text-neutral-500 dark:text-neutral-400">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )}
+        </header>
+        <div className="max-w-none prose dark:prose-invert prose-pre:bg-white prose-pre:dark:bg-neutral-900 prose-pre:border prose-pre:border-neutral-200 prose-pre:dark:border-neutral-800 prose-pre:shadow prose-pre:dark:shadow-lg prose-code:before:content-[''] prose-code:after:content-['']">
+          <MDXRenderer>{body}</MDXRenderer>
           <footer>
             <div>
               <h2 className="mb-2 font-mercurySmallCaps">Last updated</h2>
-              <p className="font-idealSans">{formattedDate}</p>
+              <p>{formattedDate}</p>
             </div>
             <div>
               <h2 className="mb-2 font-mercurySmallCaps">Share</h2>
@@ -45,7 +53,7 @@ export default function BlogPost({
               <h2 className="mb-3 font-mercurySmallCaps">
                 Table of contents
               </h2>
-              <ul className="font-idealSans">
+              <ul>
                 {tableOfContents.items.map(item => (
                   <li key={item.title} className="mb-3 last:mb-0">
                     <a href={item.url} className="hover:bg-orange-100">
@@ -83,6 +91,7 @@ export const pageQuery = graphql`
                 date
                 title
                 description
+                tags
             }
             tableOfContents
         }

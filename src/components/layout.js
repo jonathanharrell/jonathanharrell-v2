@@ -5,6 +5,7 @@ import LinkIcon from '../images/link.svg';
 import '../styles/prism.css';
 import Header from "./header";
 import Footer from "./footer";
+import { ThemeContext } from "../theme";
 
 const components = {
   h2: ({ id, children }) => {
@@ -13,7 +14,7 @@ const components = {
     }
 
     return (
-      <h2 id={id} className="relative group scroll-mt-8">
+      <h2 id={id} className="relative group scroll-mt-16">
         <div className="not-prose hidden sm:block flex items-center absolute top-0 lg:top-0.5 -left-6 pr-2 h-full opacity-0 group-hover:opacity-100 transition-all">
           <a
             href={`#${id}`}
@@ -32,22 +33,31 @@ const components = {
 }
 
 export default function Layout({children, ...props}) {
+  const [theme, setTheme] = React.useState();
+
   return (
-    <div {...props}>
-      <Helmet>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cloud.typography.com/6728436/7253432/css/fonts.css"
-        />
-      </Helmet>
-      <Header />
-      <main className="container mx-auto py-16 px-8">
-        <MDXProvider components={components}>
-          {children}
-        </MDXProvider>
-      </main>
-      <Footer />
-    </div>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <div {...props}>
+        <Helmet>
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cloud.typography.com/6728436/7253432/css/fonts.css"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        </Helmet>
+        <Header />
+        <main>
+          <div className="container mx-auto pt-24 lg:pt-32 pb-16 px-8">
+            <MDXProvider components={components}>
+              {children}
+            </MDXProvider>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </ThemeContext.Provider>
   )
 }

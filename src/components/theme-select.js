@@ -3,6 +3,7 @@ import * as Select from '@radix-ui/react-select';
 import Sun from '../images/sun.svg';
 import Moon from '../images/moon.svg';
 import Monitor from '../images/monitor.svg';
+import {useThemeContext} from "../theme";
 
 const themeOptions = {
   light: {
@@ -20,7 +21,7 @@ const themeOptions = {
 }
 
 const ThemeSelect = () => {
-  const [theme, setTheme] = React.useState();
+  const { theme, setTheme } = useThemeContext();
   const [systemTheme, setSystemTheme] = React.useState(null);
 
   React.useEffect(() => {
@@ -28,7 +29,7 @@ const ThemeSelect = () => {
 
     const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     setSystemTheme(darkThemeMediaQuery.matches ? 'dark' : 'light');
-  }, []);
+  }, [setTheme]);
 
   React.useEffect(() => {
     const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
