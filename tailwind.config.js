@@ -5,6 +5,9 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    container: {
+      center: true,
+    },
     fontFamily: {
       sf: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       idealSans: ['Ideal Sans SSm A', 'Ideal Sans SSm B', 'Helvetica', 'sans-serif'],

@@ -9,21 +9,36 @@ tags:
   - css
   - typography
 ---
+
+import CommonLigatures from "../../src/demos/common-ligatures";
+import DiscretionaryLigatures from "../../src/demos/discretionary-ligatures";
+import ContextualLigatures from "../../src/demos/contextual-ligatures";
+import HistoricalLigatures from "../../src/demos/historical-ligatures";
+import Subscript from "../../src/demos/subscript";
+import Superscript from "../../src/demos/superscript";
+import SmallCaps from "../../src/demos/small-caps";
+import AllSmallCaps from "../../src/demos/all-small-caps";
+import PetiteCaps from "../../src/demos/petite-caps";
+import AllPetiteCaps from "../../src/demos/all-petite-caps";
+import Unicase from "../../src/demos/unicase";
+import TitlingCaps from "../../src/demos/titling-caps";
+import LiningNums from "../../src/demos/lining-nums";
+import OldstyleNums from "../../src/demos/oldstyle-nums";
+import ProportionalNums from "../../src/demos/proportional-nums";
+import TabularNums from "../../src/demos/tabular-nums";
+import DiagonalFractions from "../../src/demos/diagonal-fractions";
+
 Typography on the web has always lagged behind its expression in print. This makes sense, as type on the printed page developed over centuries to a point of complexity that has been hard to capture within the confines of a browser.
 
 However, this is quickly changing thanks to the increasing availability of OpenType features in web fonts and the ability to control those features with CSS.
 
 This article is an overview of how to control OpenType features using CSS, but remember that whatever web font you are using will also need to support these features.
 
-<ul>
-  <li><a href="#font-variant-ligatures">font-variant-ligatures</a></li>
-  <li><a href="#font-variant-position">font-variant-position</a></li>
-  <li><a href="#font-variant-caps">font-variant-caps</a></li>
-  <li><a href="#font-variant-numeric">font-variant-numeric</a></li>
-  <li><a href="#font-variant-alternates">font-variant-alternates</a></li>
-</ul>
-
----
+* [font-variant-ligatures](#font-variant-ligatures)
+* [font-variant-position](#font-variant-position)
+* [font-variant-caps](#font-variant-caps)
+* [font-variant-numeric](#font-variant-numeric)
+* [font-variant-alternates](#font-variant-alternates)
 
 ## The font-variant- Properties
 
@@ -42,8 +57,6 @@ body {
 }
 ```
 
----
-
 ## font-variant-ligatures
 
 Ligatures are single glyphs made from two or more characters. They typically prevent ugly or awkward letter collisions and, therefore, aid legibility.
@@ -51,8 +64,7 @@ Ligatures are single glyphs made from two or more characters. They typically pre
 ### common-ligatures
 
 <figure>
-  <img src="../../assets/common-ligatures.png" alt=""/>
-  <figcaption>Font family: Hoefler Text</figcaption>
+  <CommonLigatures />
 </figure>
 
 These are ligatures that the type designer has decided should be used in normal conditions. In most circumstances you should use these. Most browsers enable them by default.
@@ -65,8 +77,7 @@ font-variant-ligatures: no-common-ligatures;
 ### discretionary-ligatures
 
 <figure>
-  <img src="../../assets/discretionary-ligatures.png" alt=""/>
-  <figcaption>Font family: Hoefler Text</figcaption>
+  <DiscretionaryLigatures />
 </figure>
 
 These are ligatures which can be used for typographic purposes, for example to achieve a special effect. These are disabled by default.
@@ -79,8 +90,7 @@ font-variant-ligatures: no-discretionary-ligatures;
 ### contextual
 
 <figure>
-  <img src="../../assets/contextual-ligatures.png" alt=""/>
-  <figcaption>Font family: ??</figcaption>
+  <ContextualLigatures />
 </figure>
 
 These are alternate ligatures that are affected by their surrounding context. They often harmonize the shapes of grouped glyphs. These are enabled by default.
@@ -93,8 +103,7 @@ font-variant-ligatures: no-contextual;
 ### historical-ligatures
 
 <figure>
-  <img src="../../assets/historical-ligatures.png" alt=""/>
-  <figcaption>Font family: Hoefler Text</figcaption>
+  <HistoricalLigatures />
 </figure>
 
 These are ligatures which could be considered a subset of discretionary, but are specifically used to achieve a historical effect. These are disabled by default.
@@ -103,8 +112,6 @@ These are ligatures which could be considered a subset of discretionary, but are
 font-variant-ligatures: historical-ligatures;
 font-variant-ligatures: no-historical-ligatures;
 ```
-
----
 
 ## font-variant-position
 
@@ -115,29 +122,27 @@ Thankfully, there is now a way to enable true subscripts and superscripts with `
 ### sub
 
 <figure>
-  <img src="../../assets/subscript.png" alt=""/>
-  <figcaption>Font family: Ideal Sans</figcaption>
+  <Subscript />
 </figure>
 
 This enables true subscript characters.
 
 ```css
-font-variant-position: sub; /* enable */
-font-variant-position: normal; /* disable both variants */
+font-variant-position: sub;
+font-variant-position: normal;
 ```
 
 ### super
 
 <figure>
-  <img src="../../assets/superscript.png" alt=""/>
-  <figcaption>Font family: Ideal Sans</figcaption>
+  <Superscript />
 </figure>
 
 This enables true superscript characters.
 
 ```css
-font-variant-position: super; /* enable */
-font-variant-position: normal; /* disable both variants */
+font-variant-position: super;
+font-variant-position: normal;
 ```
 
 ## font-variant-caps
@@ -147,88 +152,80 @@ A capital is not a capital is not a capital. The most significant use of `font-v
 ### small-caps
 
 <figure>
-  <img src="../../assets/small-caps.png" alt=""/>
-  <figcaption>Font family: Hoefler Text</figcaption>
+  <SmallCaps />
 </figure>
 
 Small caps are designed to be the same height as lowercase letters and are used to capitalize words within running text. They make for a more cohesive and readable paragraph.
 
 ```css
-font-variant-caps: small-caps; /* enable */
-font-variant-caps: normal; /* disable all variants */
+font-variant-caps: small-caps;
+font-variant-caps: normal;
 ```
 
 ### all-small-caps
 
 <figure>
-  <img src="../../assets/all-small-caps.png" alt=""/>
-  <figcaption>Font family: Hoefler Text</figcaption>
+  <AllSmallCaps />
 </figure>
 
 The `small-caps` value will only replace lowercase letters with small caps. To replace all letters with small caps (which is probably what you want) you need to use `all-small-caps`.
 
 ```css
-font-variant-caps: all-small-caps; /* enable */
-font-variant-caps: normal; /* disable all variants */
+font-variant-caps: all-small-caps;
+font-variant-caps: normal;
 ```
 
 ### petite-caps
 
 <figure>
-  <img src="../../assets/petite-caps.png" alt=""/>
-  <figcaption>Font family: EB Garamond</figcaption>
+  <PetiteCaps />
 </figure>
 
 Standard small caps will typically appear slightly larger than the x-height of the font. Some typefaces have additional small caps that match the x-height. These are called `petite-caps`.
 
 ```css
-font-variant-caps: petite-caps; /* enable */
-font-variant-caps: normal; /* disable all variants */
+font-variant-caps: petite-caps;
+font-variant-caps: normal;
 ```
 
 ### all-petite-caps
 
 <figure>
-  <img src="../../assets/all-petite-caps.png" alt=""/>
-  <figcaption>Font family: EB Garamond</figcaption>
+  <AllPetiteCaps />
 </figure>
 
 Similarly to `all-small-caps`, this converts all letters, both lower and uppercase, to petite caps.
 
 ```css
-font-variant-caps: all-petite-caps; /* enable */
-font-variant-caps: normal; /* disable all variants */
+font-variant-caps: all-petite-caps;
+font-variant-caps: normal;
 ```
 
 ### unicase
 
 <figure>
-  <img src="../../assets/unicase.png" alt=""/>
-  <figcaption>Font family: Filosofia</figcaption>
+  <Unicase />
 </figure>
 
 This feature maps upper and lowercase letters to a mixed set of lowercase and small capital forms, creating a single case alphabet. Sometimes the small capitals used are actual small cap glyphs and sometimes they are specially designed unicase forms. The implementation of this feature varies greatly from font to font.
 
 ```css
-font-variant-caps: unicase; /* enable */
-font-variant-caps: normal; /* disable all variants */
+font-variant-caps: unicase;
+font-variant-caps: normal;
 ```
 
 ### titling-caps
 
 <figure>
-  <img src="../../assets/titling-caps.png" alt=""/>
-  <figcaption>Font family: Hoefler Titling</figcaption>
+  <TitlingCaps />
 </figure>
 
 Standard uppercase letters are designed for use alongside lowercase letters and when they are used in strings of all uppercase letters they can appear too strong. Some fonts include titling capitals specifically for this situation.
 
 ```css
-font-variant-caps: titling-caps; /* enable */
-font-variant-caps: normal; /* disable all variants */
+font-variant-caps: titling-caps;
+font-variant-caps: normal;
 ```
-
----
 
 ## font-variant-numeric
 
@@ -247,71 +244,66 @@ font-variant-numeric: lining-nums tabular-nums;
 ### lining-nums
 
 <figure>
-  <img src="../../assets/lining-nums.png" alt=""/>
-  <figcaption>Font family: Ideal Sans</figcaption>
+  <LiningNums />
 </figure>
 
 Lining numerals approximate capital letters and are uniform in height. They should be used in headings or numeric tables. Usually numbers are lining figures by default.
 
 ```css
-font-variant-numeric: lining-nums; /* enable */
-font-variant-numeric: normal; /* disable all variants */
+font-variant-numeric: lining-nums;
+font-variant-numeric: normal;
 ```
 
 ### oldstyle-nums
 
 <figure>
-  <img src="../../assets/oldstyle-nums.png" alt=""/>
-  <figcaption>Font family: Ideal Sans</figcaption>
+  <OldstyleNums />
 </figure>
 
 Old-style numerals have varying heights and alignments and are therefore more similar to lowercase letters. They should be used in running text.
 
 ```css
-font-variant-numeric: oldstyle-nums; /* enable */
-font-variant-numeric: normal; /* disable all variants */
+font-variant-numeric: oldstyle-nums;
+font-variant-numeric: normal;
 ```
 
 ### proportional-nums
 
 <figure>
-  <img src="../../assets/proportional-nums.png" alt=""/>
-  <figcaption>Font family: Ideal Sans</figcaption>
+  <ProportionalNums />
 </figure>
 
 Proportional numerals have variable spacing and blend in with horizontal text. They should be used in most situations, other than numeric tables where vertical alignment is important. Usually numbers are proportional figures by default.
 
 ```css
-font-variant-numeric: proportional-nums; /* enable */
-font-variant-numeric: normal; /* disable all variants */
+font-variant-numeric: proportional-nums;
+font-variant-numeric: normal;
 ```
 
 ### tabular-nums
 
 <figure>
-  <img src="../../assets/tabular-nums.png" alt=""/>
-  <figcaption>Font family: Ideal Sans</figcaption>
+  <TabularNums />
 </figure>
 
 Tabular numerals have the same width and should be used in numeric tables to allow vertical alignment of numbers.
 
 ```css
-font-variant-numeric: tabular-nums; /* enable */
-font-variant-numeric: normal; /* disable all variants */
+font-variant-numeric: tabular-nums;
+font-variant-numeric: normal;
 ```
 
 ### diagonal-fractions
 
 <figure>
-  <img src="../../assets/diagonal-fractions.png" alt=""/>
-  <figcaption>Font family: Ideal Sans</figcaption>
+  <DiagonalFractions />
 </figure>
 
 By default, fractions will display as lowercase letters with a slash. Proper fractions will be formatted to match the height of a lining figure and can be either diagonal or stacked.
 
 ```css
-font-variant-numeric: diagonal-fractions; /* enable */
-font-variant-numeric: normal; /* disable all variants */
+font-variant-numeric: diagonal-fractions;
+font-variant-numeric: normal;
 ```
 
 ### stacked-fractions
@@ -324,8 +316,8 @@ font-variant-numeric: normal; /* disable all variants */
 Stacked fractions are not as common of a feature in most web fonts as diagonal fractions, but should prove useful with heavily scientific or mathematical content.
 
 ```css
-font-variant-numeric: stacked-fractions; /* enable */
-font-variant-numeric: normal; /* disable all variants */
+font-variant-numeric: stacked-fractions;
+font-variant-numeric: normal;
 ```
 
 ### ordinal
@@ -338,8 +330,8 @@ font-variant-numeric: normal; /* disable all variants */
 Ordinals like st, nd, rd, and th will appear as standard lowercase letters by default. However, these should ideally appear as smaller raised numbers following the numeral. The `ordinal` value enables that.
 
 ```css
-font-variant-numeric: ordinal; /* enable */
-font-variant-numeric: normal; /* disable all variants */
+font-variant-numeric: ordinal;
+font-variant-numeric: normal;
 ```
 
 ### slashed-zero
@@ -352,11 +344,9 @@ font-variant-numeric: normal; /* disable all variants */
 This enables an alternate zero character with a slash through it.
 
 ```css
-font-variant-numeric: slashed-zero; /* enable */
-font-variant-numeric: normal; /* disable all variants */
+font-variant-numeric: slashed-zero;
+font-variant-numeric: normal;
 ```
-
----
 
 ## font-variant-alternates
 
@@ -372,11 +362,11 @@ Fonts can provide a variety of alternates for any character. The `font-variant-a
 Historical alternates can be used for a “period” effect. Note the difference between this and historical ligatures. Historical ligatures are historical character combinations, whereas historical forms are substitutions for individual characters.
 
 ```css
-font-variant-alternates: historical-forms; /* enable */
-font-variant-alternates: normal; /* disable all variants */
+font-variant-alternates: historical-forms;
+font-variant-alternates: normal;
 ```
 
-### stylistic(feature-value-name)
+### stylistic
 
 <figure>
   <img src="../../assets/stylistic.png" alt=""/>
@@ -390,11 +380,11 @@ Use this to select stylistic features on an individual basis. In order to use th
   @stylistic { inscriptional-g: 1 }
 }
 
-font-variant-alternates: stylistic(inscriptional-g); /* enable */
-font-variant-alternates: normal; /* disable all variants */
+font-variant-alternates: stylistic(inscriptional-g);
+font-variant-alternates: normal;
 ```
 
-### styleset(feature-value-name)
+### styleset
 
 <figure>
   <img src="../../assets/styleset.png" alt=""/>
@@ -408,13 +398,11 @@ Use this to select an entire set of alternative glyphs. The glyphs in a set are 
   @styleset { special-styleset: 1 }
 }
 
-font-variant-alternates: styleset(special-styleset); /* enable */
-font-variant-alternates: normal; /* disable all variants */
-
-font-feature-settings: ss01; /* low-level enable */
+font-variant-alternates: styleset(special-styleset);
+font-variant-alternates: normal;
 ```
 
-### character-variant(feature-value-name)
+### character-variant
 
 <figure>
   <img src="../../assets/character-variant.png" alt=""/>
@@ -428,13 +416,11 @@ Use this to select specific character variants. Select a particular variant by d
   @character-variant { special-variant: 1 }
 }
 
-font-variant-alternates: character-variant(special-variant); /* enable */
-font-variant-alternates: normal; /* disable all variants */
-
-font-feature-settings: cv01; /* low-level enable */
+font-variant-alternates: character-variant(special-variant);
+font-variant-alternates: normal;
 ```
 
-### swash(feature-value-name)
+### swash
 
 <figure>
   <img src="../../assets/swash.png" alt=""/>
@@ -448,14 +434,11 @@ Swashes can be used to provide typographic interest to headings or more artistic
   @swash { flourish: 1 }
 }
 
-font-variant-alternates: swash(flourish); /* enable */
-font-variant-alternates: normal; /* disable all variants */
-
-font-feature-settings: swsh 1; /* low-level enable */
-font-feature-settings: swsh 0; /* low-level disable */
+font-variant-alternates: swash(flourish);
+font-variant-alternates: normal;
 ```
 
-### ornaments(feature-value-name)
+### ornaments
 
 <figure>
   <img src="../../assets/ornaments.png" alt=""/>
@@ -469,14 +452,11 @@ This replaces default glyphs with ornaments, if they are provided in the font.
   @ornaments { fleurons: 1 }
 }
 
-font-variant-alternates: ornaments(fleurons); /* enable */
-font-variant-alternates: normal; /* disable all variants */
-
-font-feature-settings: ornm 1; /* low-level enable */
-font-feature-settings: ornm 0; /* low-level disable */
+font-variant-alternates: ornaments(fleurons);
+font-variant-alternates: normal;
 ```
 
-### annotation(feature-value-name)
+### annotation
 
 <figure>
   <img src="../../assets/annotations.png" alt=""/>
@@ -490,14 +470,9 @@ Annotations are notational forms of glyphs (for example, glyphs placed in open o
   @ornaments { circles: 1 }
 }
 
-font-variant-alternates: annotation(circles); /* enable */
-font-variant-alternates: normal; /* disable all variants */
-
-font-feature-settings: nalt 1; /* low-level enable */
-font-feature-settings: nalt 0; /* low-level disable */
+font-variant-alternates: annotation(circles);
+font-variant-alternates: normal;
 ```
-
----
 
 ## Further Reading
 

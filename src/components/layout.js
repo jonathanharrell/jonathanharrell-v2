@@ -32,8 +32,44 @@ const components = {
   }
 }
 
+const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
 export default function Layout({children, ...props}) {
   const [theme, setTheme] = React.useState();
+
+  React.useEffect(() => {
+    const savedTheme = localStorage.theme;
+
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme(darkThemeMediaQuery.matches ? 'dark' : 'light');
+    }
+  }, [setTheme]);
+
+  React.useEffect(() => {
+    const handleThemeChange = event => {
+      setTheme(event.matches ? 'dark' : 'light');
+    }
+
+    darkThemeMediaQuery.addListener(handleThemeChange);
+
+    return () => {
+      darkThemeMediaQuery.removeListener(handleThemeChange);
+    }
+  }, [setTheme]);
+
+  React.useEffect(() => {
+    if (theme === 'light') {
+      localStorage.theme = 'light';
+      document.documentElement.classList.remove('dark');
+    }
+
+    if (theme === 'dark') {
+      localStorage.theme = 'dark';
+      document.documentElement.classList.add('dark');
+    }
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -50,7 +86,7 @@ export default function Layout({children, ...props}) {
         </Helmet>
         <Header />
         <main>
-          <div className="container mx-auto pt-24 lg:pt-32 pb-16 px-8">
+          <div className="container pt-24 lg:pt-32 pb-16 px-8">
             <MDXProvider components={components}>
               {children}
             </MDXProvider>

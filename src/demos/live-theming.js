@@ -19,7 +19,7 @@ const LiveTheming = () => {
 
   return (
     <div
-      className="not-prose md:flex md:gap-8 p-8 md:p-12 bg-gray-100 dark:bg-gray-800 font-light"
+      className="not-prose md:flex md:gap-8 p-8 md:p-12 bg-neutral-100 dark:bg-neutral-800 font-light"
       style={{
         '--background-color': `${bgColor}`,
         '--text-color': `${textColor}`,
@@ -43,7 +43,7 @@ const LiveTheming = () => {
             id="bgColor"
             type="color"
             value={bgColor}
-            className="overflow-hidden w-6 h-6 rounded border border-gray-600 bg-transparent"
+            className="overflow-hidden w-6 h-6 rounded border border-neutral-600 bg-transparent"
             onChange={handleBgColorChange}
           />
         </div>
@@ -55,7 +55,7 @@ const LiveTheming = () => {
             id="textColor"
             type="color"
             value={textColor}
-            className="overflow-hidden w-6 h-6 rounded border border-gray-600 bg-transparent"
+            className="overflow-hidden w-6 h-6 rounded border border-neutral-600 bg-transparent"
             onChange={handleTextColorChange}
           />
         </div>

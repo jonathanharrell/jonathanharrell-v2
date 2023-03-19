@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import ShareIcon from '../images/share.svg';
 
 const Share = ({ title, description }) => {
@@ -8,7 +8,7 @@ const Share = ({ title, description }) => {
     setHasNavigatorShare(!!navigator.share);
   }, []);
 
-  const sharePost = async () => {
+  const sharePost = useCallback(async () => {
     try {
       await navigator.share({
         url: window.location.href,
@@ -18,9 +18,9 @@ const Share = ({ title, description }) => {
     } catch (error) {
       console.error(error)
     }
-  }
+  }, [title, description]);
 
-  const buttonClasses = "inline-flex items-center py-1.5 px-4 rounded-3xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-sm font-semibold dark:text-white";
+  const buttonClasses = "inline-flex items-center py-1.5 px-4 rounded-3xl bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-sm font-semibold dark:text-white";
 
   return (
     <div>

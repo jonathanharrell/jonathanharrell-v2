@@ -5,16 +5,20 @@
 :root {
   color-scheme: light dark;
 
-  --diagram-background: white;
-  --diagram-text: #111827;
+  --diagram-border: #e5e5e5;
+  --diagram-background: #fafafa;
+  --diagram-text: #171717;
+  --diagram-text-lighter: #a3a3a3;
   --diagram-image: #D1D5DC;
   --diagram-placeholder: #E5E7EB;
   --diagram-overlay-blend-mode: multiply;
 }
 
 .dark {
-  --diagram-background: #111827;
-  --diagram-text: #E5E7EB;
+  --diagram-border: #404040;
+  --diagram-background: #262626;
+  --diagram-text: white;
+  --diagram-text-lighter: #737373;
   --diagram-image: #374151;
   --diagram-placeholder: #4B5563;
   --diagram-overlay-blend-mode: screen;
@@ -32,11 +36,15 @@ body {
     @apply
       bg-white dark:bg-neutral-900
       font-notoSans
-      text-gray-800 dark:text-gray-100
+      text-neutral-800 dark:text-neutral-100
       selection:bg-neutral-200 dark:selection:bg-neutral-700;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  @apply xl:max-w-[1200px];
 }
 
 .article-body {
@@ -56,4 +64,8 @@ body {
 
 .sp-preview-container {
   background: transparent !important;
+}
+
+.article-toc {
+  height: calc(100vh - 6rem);
 }

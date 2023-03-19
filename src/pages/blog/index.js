@@ -7,54 +7,35 @@ const Blog = ({data: {allMdx}}) => {
 
   return (
     <Layout>
-      <div className="max-w-3xl mx-auto">
+      <div>
+        <h1 className="sr-only">
+          Articles
+        </h1>
         <div>
-          <h1 className="mb-8 text-sm sm:text-3xl font-semibold">
-            Articles
-          </h1>
-          <div className="grid grid-cols-12 gap-x-24">
-            <div className="col-start-1 col-end-9">
-              {posts.map(post => {
-                return (
-                  <Link
-                    key={post.node.id}
-                    to={`/blog/${post.node.slug}`}
-                    className="flex flex-col py-6"
-                  >
-                    <h2 className="text-lg tracking-tight font-bold">
-                      {post.node.frontmatter.title}
-                    </h2>
-                    <p className="leading-relaxed mt-2">
-                      {post.node.frontmatter.description}
-                    </p>
-                    <p className="mt-3">
-                      <a href="" className="text-sm font-medium dark:text-gray-500">
-                        Read more
-                      </a>
-                    </p>
-                  </Link>
-                )
-              })}
-            </div>
-            <div className="col-start-10 col-end-13">
-              <h2>Categories</h2>
-              <ul>
-                <li>section 1</li>
-                <li>section 2</li>
-                <li>section 3</li>
-                <li>section 4</li>
-                <li>section 5</li>
-              </ul>
-              <h2>Tags</h2>
-              <ul>
-                <li>section 1</li>
-                <li>section 2</li>
-                <li>section 3</li>
-                <li>section 4</li>
-                <li>section 5</li>
-              </ul>
-            </div>
-          </div>
+          {posts.map(post => {
+            return (
+              <Link
+                key={post.node.id}
+                to={`/blog/${post.node.slug}`}
+                className="flex items-center gap-16 mb-24 group"
+              >
+                <div className="group-even:order-1 w-1/2 aspect-video bg-neutral-500" />
+                <div className="w-1/2">
+                  <h2 className="max-w-[24ch] text-3xl font-bold">
+                    {post.node.frontmatter.title}
+                  </h2>
+                  <p className="max-w-[48ch] leading-relaxed mt-2">
+                    {post.node.frontmatter.description}
+                  </p>
+                  <p className="mt-3">
+                    <span className="text-sm font-semibold text-neutral-500">
+                      Read more
+                    </span>
+                  </p>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </Layout>

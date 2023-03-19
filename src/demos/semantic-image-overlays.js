@@ -2,7 +2,7 @@ import React from 'react';
 
 const SemanticImageOverlays = () => {
   return (
-    <div className="flex items-center justify-center gap-8 md:gap-16 py-6 px-4 border border-gray-200 rounded-lg">
+    <div className="flex items-center justify-center gap-8 md:gap-16 py-6 px-4 border border-neutral-200 rounded-lg">
       <div className="hidden sm:block relative w-48 h-48 rounded-lg overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?auto=format&fit=crop&w=1024&h=1280&q=80"
