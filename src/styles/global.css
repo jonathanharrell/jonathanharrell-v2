@@ -1,28 +1,11 @@
-:root {
-  color-scheme: light;
-
-  --diagram-border: #e5e5e5;
-  --diagram-background: #fafafa;
-  --diagram-text: #171717;
-  --diagram-text-lighter: #a3a3a3;
-  --diagram-image: #D1D5DC;
-  --diagram-placeholder: #E5E7EB;
-  --diagram-overlay-blend-mode: multiply;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-
-    --diagram-border: #404040;
-    --diagram-background: #262626;
-    --diagram-text: white;
-    --diagram-text-lighter: #737373;
-    --diagram-image: #374151;
-    --diagram-placeholder: #4B5563;
-    --diagram-overlay-blend-mode: screen;
-  }
-}
+@layer
+  reset,
+  default,
+  themes,
+  patterns,
+  layouts,
+  components,
+  utilities;
 
 @layer reset {
   *, *:before, *:after {
@@ -32,32 +15,64 @@
   body {
     margin: 0;
   }
+
+  figure {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+  }
 }
 
-html {
-  font-size: clamp(1rem, 2vw + 0.25rem, 1.25rem);
+@layer defaults {
+  html {
+    font-size: clamp(1rem, 2vw + 0.25rem, 1.25rem);
+  }
+
+  p {
+    line-height: 1.3;
+  }
+
+  img {
+    max-inline-size: 100%;
+  }
+
+  pre {
+    overflow-x: auto;
+    background-color: lch(50% 0 0 / 15%);
+  }
 }
 
-p {
-  line-height: 1.3;
+@layer themes {
+  :root {
+    color-scheme: light;
+
+    --diagram-border: #e5e5e5;
+    --diagram-background: #fafafa;
+    --diagram-text: #171717;
+    --diagram-text-lighter: #a3a3a3;
+    --diagram-image: #D1D5DC;
+    --diagram-placeholder: #E5E7EB;
+    --diagram-overlay-blend-mode: multiply;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+
+      --diagram-border: #404040;
+      --diagram-background: #262626;
+      --diagram-text: white;
+      --diagram-text-lighter: #737373;
+      --diagram-image: #374151;
+      --diagram-placeholder: #4B5563;
+      --diagram-overlay-blend-mode: screen;
+    }
+  }
 }
 
-figure {
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-}
-
-img {
-  max-inline-size: 100%;
-}
-
-pre {
-  overflow-x: auto;
-  background-color: lch(50% 0 0 / 15%);
-}
-
-.container {
-  max-inline-size: 75rem;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+@layer layouts {
+  .container {
+    max-inline-size: 75rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
 }

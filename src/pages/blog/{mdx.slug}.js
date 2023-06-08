@@ -18,22 +18,25 @@ export default function BlogPost({
       <div>
         <article>
           <header>
-            <p>{formattedDate}</p>
+            <time>{formattedDate}</time>
             <h1>
               {title}
             </h1>
             {tags.length > 0 && (
-              <ul>
-                {tags.map(tag => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
+              <section>
+                <h2>Tags</h2>
+                <ul>
+                  {tags.map(tag => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </ul>
+              </section>
             )}
             <TableOfContents tableOfContents={tableOfContents} />
           </header>
           <MDXRenderer>{body}</MDXRenderer>
           <footer>
-            <p>Last updated {formattedDate}</p>
+            <p>Last updated <time>{formattedDate}</time></p>
             <Share title={title} description={description} />
             <h2>Mentions</h2>
           </footer>
