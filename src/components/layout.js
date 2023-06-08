@@ -14,19 +14,16 @@ const components = {
     }
 
     return (
-      <h2 id={id} className="relative group scroll-mt-16">
-        <div className="not-prose hidden sm:block flex items-center absolute top-0 lg:top-0.5 -left-6 pr-2 h-full opacity-0 group-hover:opacity-100 transition-all">
-          <a
-            href={`#${id}`}
-            title="Copy link to this section"
-            aria-hidden="true"
-            className="block py-1.5"
-            onClick={copyLink}
-          >
-            <LinkIcon width="0.75em" height="0.75em"/>
-          </a>
-        </div>
+      <h2 id={id}>
         {children}
+        <a
+          href={`#${id}`}
+          title="Copy link to this section"
+          aria-hidden="true"
+          onClick={copyLink}
+        >
+          <LinkIcon width="0.75em" height="0.75em"/>
+        </a>
       </h2>
     );
   }
@@ -86,7 +83,7 @@ export default function Layout({children, ...props}) {
         </Helmet>
         <Header />
         <main>
-          <div className="container pt-24 lg:pt-32 pb-16 px-8">
+          <div className="container">
             <MDXProvider components={components}>
               {children}
             </MDXProvider>

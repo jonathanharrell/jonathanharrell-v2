@@ -4,29 +4,23 @@ import ThemeSelect from "./theme-select";
 
 const Header = () => {
   return (
-    <header className="fixed z-20 w-full border-b border-neutral-800/10 dark:border-neutral-800 backdrop-blur bg-white/70 dark:bg-neutral-900/70">
-      <div className="container flex items-center justify-between mx-auto py-3 px-8">
+    <header>
+      <div className="container">
         <Link to="/">JH</Link>
-        <nav className="ml-auto">
-          <ul className="flex">
-            <li className="ml-3 sm:ml-8">
-              <Link to="/blog" className="font-semibold text-sm">
-                Articles
-              </Link>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/blog">Articles</Link>
             </li>
-            <li className="ml-3 sm:ml-8">
-              <Link to="/about" className="font-semibold text-sm">
-                About
-              </Link>
+            <li>
+              <Link to="/about">About</Link>
             </li>
-            <li className="ml-3 sm:ml-8">
-              <Link to="/uses" className="font-semibold text-sm">
-                Uses
-              </Link>
+            <li>
+              <Link to="/uses">Uses</Link>
             </li>
           </ul>
         </nav>
-        <div className="ml-4 sm:ml-8">
+        <div>
           <ThemeSelect />
         </div>
       </div>

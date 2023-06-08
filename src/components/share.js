@@ -20,13 +20,11 @@ const Share = ({ title, description }) => {
     }
   }, [title, description]);
 
-  const buttonClasses = "inline-flex items-center py-1.5 px-4 rounded-3xl bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-sm font-semibold dark:text-white";
-
   return (
     <div>
       {hasNavigatorShare && (
-        <button className={buttonClasses} onClick={sharePost}>
-          <ShareIcon width="1em" height="1em" className="mr-1.5"  />
+        <button onClick={sharePost}>
+          <ShareIcon width="1em" height="1em"  />
           Share
         </button>
       )}
