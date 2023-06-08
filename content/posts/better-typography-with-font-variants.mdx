@@ -30,6 +30,10 @@ import DiagonalFractions from "../../src/demos/diagonal-fractions";
 import StackedFractions from "../../src/demos/stacked-fractions";
 import Ordinals from "../../src/demos/ordinals";
 import SlashedZero from "../../src/demos/slashed-zero";
+import HistoricalForms from "../../src/demos/historical-forms";
+import Stylistic from "../../src/demos/stylistic";
+import Styleset from "../../src/demos/styleset";
+import CharacterVariant from "../../src/demos/character-variant";
 
 Typography on the web has always lagged behind its expression in print. This makes sense, as type on the printed page developed over centuries to a point of complexity that has been hard to capture within the confines of a browser.
 
@@ -355,8 +359,7 @@ Fonts can provide a variety of alternates for any character. The `font-variant-a
 ### historical-forms
 
 <figure>
-  <img src="../../assets/historical-forms.png" alt=""/>
-  <figcaption>Font family: Hoefler Text</figcaption>
+  <HistoricalForms />
 </figure>
 
 Historical alternates can be used for a “period” effect. Note the difference between this and historical ligatures. Historical ligatures are historical character combinations, whereas historical forms are substitutions for individual characters.
@@ -369,8 +372,7 @@ font-variant-alternates: normal;
 ### stylistic
 
 <figure>
-  <img src="../../assets/stylistic.png" alt=""/>
-  <figcaption>Font family: Ideal Sans</figcaption>
+  <Stylistic />
 </figure>
 
 Use this to select stylistic features on an individual basis. In order to use this and several of the following `font-variant-alternates` functions, you must define a `font-feature-value` using the `@font-feature-values` rule. For example, if you wanted to select stylistic feature number 1 in the font you are using, you would first define the feature value, and then use it within the `font-variant-alternates: stylistic()` function.
@@ -387,8 +389,7 @@ font-variant-alternates: normal;
 ### styleset
 
 <figure>
-  <img src="../../assets/styleset.png" alt=""/>
-  <figcaption>Font family: Hoefler Text</figcaption>
+  <Styleset />
 </figure>
 
 Use this to select an entire set of alternative glyphs. The glyphs in a set are often designed to work together. Select a particular set by defining a `font-feature-values` rule using the set’s number.
@@ -405,8 +406,7 @@ font-variant-alternates: normal;
 ### character-variant
 
 <figure>
-  <img src="../../assets/character-variant.png" alt=""/>
-  <figcaption>Font family: Hoefler Text</figcaption>
+  <CharacterVariant />
 </figure>
 
 Use this to select specific character variants. Select a particular variant by defining a `font-feature-values` rule using the variant’s number.
