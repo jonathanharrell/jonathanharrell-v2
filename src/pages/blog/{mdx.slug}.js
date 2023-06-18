@@ -16,29 +16,38 @@ export default function BlogPost({
   return (
     <Layout>
       <div>
-        <article>
+        <article className="full-post grid-wrapper">
           <header>
             <time>{formattedDate}</time>
             <h1>
               {title}
             </h1>
+            <p className="lead">
+              {description}
+            </p>
+            <TableOfContents tableOfContents={tableOfContents} />
+          </header>
+          <div className="post-body grid-wrapper">
+            <MDXRenderer>{body}</MDXRenderer>
+          </div>
+          <footer>
+            <p className="post-updated">
+              Last updated <time>{formattedDate}</time>
+            </p>
+            <Share title={title} description={description} />
             {tags.length > 0 && (
               <section>
-                <h2>Tags</h2>
-                <ul>
+                <h2 className="sr-only">Tags</h2>
+                <ul className="tags-list">
                   {tags.map(tag => (
                     <li key={tag}>{tag}</li>
                   ))}
                 </ul>
               </section>
             )}
-            <TableOfContents tableOfContents={tableOfContents} />
-          </header>
-          <MDXRenderer>{body}</MDXRenderer>
-          <footer>
-            <p>Last updated <time>{formattedDate}</time></p>
-            <Share title={title} description={description} />
-            <h2>Mentions</h2>
+            {/*<section>*/}
+            {/*  <h2>Mentions</h2>*/}
+            {/*</section>*/}
           </footer>
         </article>
       </div>

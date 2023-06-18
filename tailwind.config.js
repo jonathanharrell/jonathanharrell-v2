@@ -9,12 +9,8 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      sf: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-      idealSans: ['Ideal Sans SSm A', 'Ideal Sans SSm B', 'Helvetica', 'sans-serif'],
-      mercury: ['Mercury SSm A', 'Mercury SSm B', 'serif'],
-      mercurySmallCaps: ['Mercury SSm Small Caps A', 'Mercury SSm Small Caps B', 'serif'],
+      sf: ['-apple-system', 'BlinkMacSystemFont', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
       mono: ['SF Mono', 'SFMono-Regular', 'ui-monospace', 'Menlo', 'monospace'],
-      notoSans: ['Noto Sans', 'Helvetica', 'sans-serif']
     },
     extend: {},
   },

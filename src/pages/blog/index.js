@@ -1,40 +1,45 @@
 import React from 'react';
 import {graphql, Link} from "gatsby";
 import Layout from "../../components/layout";
-import {MDXRenderer} from "gatsby-plugin-mdx";
+import {formatDate} from "../../helpers";
 
 const Blog = ({data: {allMdx}}) => {
   const posts = allMdx.edges;
 
   return (
     <Layout>
-      <div>
-        <h1>
+      <div className="grid-wrapper">
+        <h1 className="sr-only">
           Articles
         </h1>
-        <div>
-          {posts.map(post => {
-            return (
-              <article>
-                <Link
-                  key={post.node.id}
-                  to={`/blog/${post.node.slug}`}
-                >
-                  <h2>{post.node.frontmatter.title}</h2>
-                </Link>
-                {/*<MDXRenderer>{post.node.body}</MDXRenderer>*/}
-                <p>
-                  <Link
-                    key={post.node.id}
-                    to={`/blog/${post.node.slug}`}
-                  >
-                    Read more
-                  </Link>
-                </p>
-              </article>
-            )
-          })}
-        </div>
+        {posts.length > 0 && (
+          <div className="posts">
+            {posts.map(post => {
+              const {id, slug, frontmatter} = post.node;
+              const {date, title, description} = frontmatter;
+              const formattedDate = formatDate(date);
+
+              return (
+                <article className="post-teaser">
+                  <time>{formattedDate}</time>
+                  <h2>
+                    <Link key={id} to={`/blog/${slug}`}>
+                      {title}
+                    </Link>
+                  </h2>
+                  <p>
+                    {description}
+                  </p>
+                  <p className="read-more">
+                    <Link key={id} to={`/blog/${slug}`}>
+                      Read more
+                    </Link>
+                  </p>
+                </article>
+              )
+            })}
+          </div>
+        )}
       </div>
     </Layout>
   )

@@ -4,13 +4,10 @@ import {
   SandpackPreview,
   SandpackProvider, useSandpack,
 } from '@codesandbox/sandpack-react';
-import resolveConfig from 'tailwindcss/resolveConfig';
 
-import tailwindConfig from '../../tailwind.config.js';
 import {useThemeContext} from "../theme";
-import {darkTheme, getPreviewCode, lightTheme} from "../sandpack-theme";
-
-const {theme: {fontFamily, fontSize}} = resolveConfig(tailwindConfig);
+import {getPreviewCode} from "../sandpack-theme";
+import {atomDark} from "@codesandbox/sandpack-themes";
 
 const SandpackContent = ({previewStyle}) => {
   const {listen} = useSandpack();
@@ -81,22 +78,11 @@ const Sandpack = ({template, files, activeFile, previewStyle}) => {
     }
   }, [trimmedFiles, theme]);
 
-  const sandpackTheme = useMemo(() => {
-    return {
-      ...(theme === 'dark' ? darkTheme : lightTheme),
-      font: {
-        mono: fontFamily.mono.join(', '),
-        size: fontSize.sm[0],
-        lineHeight: '1.7'
-      }
-    };
-  }, [theme]);
-
   return (
     <div>
       <SandpackProvider
         key={theme}
-        theme={sandpackTheme}
+        theme={atomDark}
         template={template}
         files={finalFiles}
         options={{ activeFile, initMode: 'lazy' }}

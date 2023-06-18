@@ -50,8 +50,6 @@ Say I’m building a blog post template. First, I’ll need a `header` to contai
 
 The `article` element contains the header and all post content as direct children. This will be important as we apply CSS grid styles to the post. Callouts are written using `aside` elements, perfect for content that is connected tangentially to the rest of the document, and appear in the document directly before the paragraph they are connected to. Note that each `aside` contains a child paragraph of its own.
 
----
-
 ## Fallback Styling
 
 Next, we’ll apply some basic styles for browsers that don’t yet support CSS grid. We’ll set a max-width of 70 characters using the `ch` unit:
@@ -61,8 +59,6 @@ Next, we’ll apply some basic styles for browsers that don’t yet support CSS 
   max-width: 70ch;
 }
 ```
-
----
 
 ## Using CSS Grid
 
@@ -125,8 +121,6 @@ The post header and content now sit next to each other in a row. The callouts ar
 </Figure>
 
 The asides are now pulled to the left of the paragraph immediately following them, looking exactly like callouts. The paragraphs within each callout have absolute positioning applied so that they don't force the proceeding paragraph down if they are taller than the adjacent content.
-
----
 
 ## Bonus: Full-Width Figures
 

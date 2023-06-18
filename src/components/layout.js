@@ -6,6 +6,7 @@ import '../styles/prism.css';
 import Header from "./header";
 import Footer from "./footer";
 import { ThemeContext } from "../theme";
+import '../styles/global.css';
 
 const components = {
   h2: ({ id, children }) => {
@@ -77,9 +78,6 @@ export default function Layout({children, ...props}) {
             type="text/css"
             href="https://cloud.typography.com/6728436/7253432/css/fonts.css"
           />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
         </Helmet>
         <Header />
         <main>
